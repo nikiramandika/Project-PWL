@@ -38,33 +38,38 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('profile');
 	})->name('profile');
 
-	Route::get('/user-management', [AdminController::class, 'view_user']);
+	Route::get('/user-management', [AdminController::class, 'index']);
 	Route::post('/user-management', [AdminController::class, 'store']);
 	Route::get('/user-management/create', [AdminController::class, 'create']);
-	Route::get('/user-management/{id}/edit', [BrandController::class, 'edit']);
+	Route::get('/user-management/{id}/edit', [AdminController::class, 'edit']);
+	Route::put('/user-management/{id}', [AdminController::class, 'update']);
 
 
 	Route::get('/brands', [BrandController::class, 'index']);
 	Route::post('/brands', [BrandController::class, 'store']);
 	Route::get('/brands/create', [BrandController::class, 'create']);
 	Route::get('/brands/{id}/edit', [BrandController::class, 'edit']);
+	Route::put('/brands/{id}', [BrandController::class, 'update']);
 
 	Route::get('/categories', [CategoryController::class, 'index']);
 	Route::post('/categories', [CategoryController::class, 'store']);
 	Route::get('/categories/create', [CategoryController::class, 'create']);
-	Route::get('/categories/{id}/edit', [BrandController::class, 'edit']);
+	Route::get('/categories/{id}/edit', [CategoryController::class, 'edit']);
+	Route::put('/categories/{id}', [CategoryController::class, 'update']);
 
 
 	Route::get('/products', [ProductController::class, 'index']);
 	Route::post('/products', [ProductController::class, 'store']);
 	Route::get('/products/create', [ProductController::class, 'create']);
-	Route::get('/products/{id}/edit', [BrandController::class, 'edit']);
+	Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
+	Route::put('/products/{id}', [ProductController::class, 'update']);
 
 
 	Route::get('/orders', [OrderController::class, 'index']);
 	Route::post('/orders', [OrderController::class, 'store']);
 	Route::get('/orders/create', [OrderController::class, 'create']);
-	Route::get('/orders/{id}/edit', [BrandController::class, 'edit']);
+	Route::get('/orders/{id}/edit', [ProductController::class, 'edit']);
+	Route::put('/orders/{id}', [ProductController::class, 'update']);
 
 
 

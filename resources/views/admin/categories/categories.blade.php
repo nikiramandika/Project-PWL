@@ -116,12 +116,16 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $category->updated_at }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="Edit user">
+                                                <a href="/categories/{{ $category->id }}/edit" class="mx-3"
+                                                    data-bs-toggle="tooltip" data-bs-original-title="Edit category">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
+
                                                 <span>
-                                                    <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
+                                                        data-bs-original-title="Delete">
+                                                        <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                    </a>
                                                 </span>
                                             </td>
                                         </tr>

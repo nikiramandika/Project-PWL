@@ -8,10 +8,10 @@
             }
         </style>
 
-        @if (session()->has('success'))
+        @if (session()->has('successs'))
             <div id="success-alert" class="alert alert-secondary mx-4" role="alert">
                 <span class="text-white">
-                    {{ session('success') }}
+                    {{ session('successs') }}
                 </span>
             </div>
         @endif
@@ -42,8 +42,6 @@
                             <div>
                                 <h5 class="mb-0">All Users</h5>
                             </div>
-                            <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New
-                                User</a>
                         </div>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
@@ -104,13 +102,17 @@
                                                 <span
                                                     class="text-secondary text-xs font-weight-bold">{{ $user->updated_at }}</span>
                                             </td>
+
                                             <td class="text-center">
-                                                <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="Edit user">
+                                                <a href="/user-management/{{ $user->id }}/edit" class="mx-3"
+                                                    data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
                                                 <span>
-                                                    <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
+                                                        data-bs-original-title="Delete">
+                                                        <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                    </a>
                                                 </span>
                                             </td>
                                         </tr>

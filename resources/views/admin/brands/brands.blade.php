@@ -116,7 +116,7 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $brand->updated_at }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="/brands/edit" class="mx-3" data-bs-toggle="tooltip"
+                                                <a href="/brands/{{ $brand->id}}/edit" class="mx-3" data-bs-toggle="tooltip"
                                                     data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>

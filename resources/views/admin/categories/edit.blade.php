@@ -19,37 +19,37 @@
                 <div class="card mb-4 mx-4">
                     <div class="card-header pb-0">
                         <div class="d-flex flex-row justify-content-between">
-                            <a href="{{ url('brands') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
+                            <a href="{{ url('categories') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
                             <div>
-                                <h5 class="mb-0">Edit Brands</h5>
+                                <h5 class="mb-0">Edit Category</h5>
                             </div>
                         </div>
                     </div>
                     <div class="card-body px-4 pt-0 pb-2">
-                        <form action="/brands/{{ $brand->id }}" method="POST">
+                        <form action="/categories/{{ $category->id }}" method="POST">
                             @method('put')
                             @csrf
-                            <input type="hidden" name="is_active" id="active" value="{{ $brand->is_active }}">
+                            <input type="hidden" name="is_active" id="active" value="{{ $category->is_active }}">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input name="name" type="text" class="form-control" id="name"
-                                    aria-describedby="emailHelp" value="{{ $brand->name }}">
+                                    aria-describedby="emailHelp" value="{{ $category->name }}">
                             </div>
                             <div class="mb-3">
                                 <label for="disabledTextInput" class="form-label">Slug</label>
-                                <input readonly name="slug" type="text" value="{{ $brand->slug }}" id="slug"
+                                <input readonly name="slug" type="text" value="{{ $category->slug }}" id="slug"
                                     class="form-control">
                             </div>
 
                             <div class="mb-3">
                                 <label for="image" class="form-label">Image</label>
                                 <input name="image" type="file" class="form-control" id="image"
-                                    value="{{ $brand->image }}">
+                                    value="{{ $category->image }}">
                             </div>
 
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
-                                    @if ($brand->is_active) checked @endif>
+                                    @if ($category->is_active) checked @endif>
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Active</label>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
