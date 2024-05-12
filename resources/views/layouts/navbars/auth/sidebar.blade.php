@@ -53,43 +53,42 @@
                 </a>
             </li>
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Request::is('brands') ? 'active' : '' }}"
-                    href="{{ url('brands') }}">
+                <a class="nav-link {{ Request::is('brands*') ? 'active' : '' }}" href="{{ url('brands') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;"
-                            class="fas fa-lg fa-laptop ps-2 pe-2 text-center text-dark {{ Request::is('brands') ? 'text-white' : 'text-dark' }} "
+                            class="fas fa-lg fa-laptop ps-2 pe-2 text-center text-dark {{ Request::is('brands*') ? 'text-white' : 'text-dark' }} "
                             aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Brands</span>
                 </a>
             </li>
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Request::is('categories') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('categories*') ? 'active' : '' }}"
                     href="{{ url('categories') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;"
-                            class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ Request::is('categories') ? 'text-white' : 'text-dark' }} "
+                            class="fas fa-lg fa-list-ul ps-2 pe-2 text-center text-dark {{ Request::is('categories*') ? 'text-white' : 'text-dark' }} "
                             aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Categories</span>
                 </a>
             </li>
             <li class="nav-item pb-2">
-                <a class="nav-link {{ Request::is('products') ? 'active' : '' }}"
+                <a class="nav-link {{ Request::is('products*') ? 'active' : '' }}"
                     href="{{ url('products') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i style="font-size: 1rem;"
-                            class="fas fa-lg fa-inbox ps-2 pe-2 text-center text-dark {{ Request::is('products') ? 'text-white' : 'text-dark' }} "
+                            class="fas fa-lg fa-inbox ps-2 pe-2 text-center text-dark {{ Request::is('products*') ? 'text-white' : 'text-dark' }} "
                             aria-hidden="true"></i>
                     </div>
                     <span class="nav-link-text ms-1">Products</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('orders') ? 'active' : '' }}" href="{{ url('orders') }}">
+                <a class="nav-link {{ Request::is('orders*') ? 'active' : '' }}" href="{{ url('orders') }}">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
