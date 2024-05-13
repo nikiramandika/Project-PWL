@@ -85,7 +85,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="image" class="form-label">Image</label>
-                                <input name="images" type="file" class="form-control" id="image">
+                                <input name="image" type="file" class="form-control" id="image">
                                 @error('image')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -24,14 +25,19 @@ class CategoryController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'min:2'],
             'slug' => ['required', 'string', 'min:2'],
-            'image' => ['required'],
+            'image' => ['required', 'image'],
             'is_active' => ['required', 'string', 'max:255'],
         ]);
+
+        $image = $request->file('image');
+        $imagePath = $image->storeAs('public/categories', Str::random(20) . '.' . $image->getClientOriginalExtension());
+        // Ubah path agar sesuai dengan direktori publik
+        $imagePath = str_replace('public', 'storage', $imagePath);
 
         Category::create([
             'name' => $request->name,
             'slug' => $request->slug,
-            'image' => $request->image,
+            'image' => $imagePath,
             'is_active' => $request->is_active,
         ]);
 
@@ -61,5 +67,12 @@ class CategoryController extends Controller
         ]);
 
         return redirect('/categories')->with('successs', 'Data Berhasil Diupdate.');
+    }
+
+    public function destroy($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/categories')->with('successs', 'Data Berhasil Dihapus.');
     }
 }

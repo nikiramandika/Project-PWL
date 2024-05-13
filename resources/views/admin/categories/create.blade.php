@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="card-body px-4 pt-0 pb-2">
-                        <form action="/categories" method="POST">
+                        <form action="/categories" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="is_active" id="active" value="0">
                             <div class="mb-3">

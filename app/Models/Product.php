@@ -12,20 +12,17 @@ class Product extends Model
     protected $fillable = [
         'category_id',
         'brand_id',
-        'name', 
-        'slug', 
-        'images', 
+        'name',
+        'slug',
+        'image',
         'description',
-        'price',     
-        'is_active', 
-        'is_featured', 
-        'in_stock', 
+        'price',
+        'is_active',
+        'is_featured',
+        'in_stock',
         'on_sale'
     ];
 
-    protected $casts = [
-        'images' => 'array'
-    ];
 
     public function category()
     {
@@ -36,6 +33,7 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class);
     }
+
     public function orderItems()
     {
         return $this->hasMany(Review::class);

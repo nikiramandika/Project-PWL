@@ -109,10 +109,17 @@
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
                                                 <span>
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Delete">
-                                                        <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                                    </a>
+                                                    <form id="delete-form-{{ $user->id }}"
+                                                        action="/user-management/{{ $user->id }}" method="POST"
+                                                        style="display: inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a href="#" class="mx-3"
+                                                            onclick="deleteUser({{ $user->id }})"
+                                                            data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                        </a>
+                                                    </form>
                                                 </span>
                                             </td>
                                         </tr>
@@ -125,4 +132,13 @@
             </div>
         </div>
     </div>
+    <script>
+        function deleteUser(userId) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                event.preventDefault();
+                document.getElementById('delete-form-' + userId).submit();
+            }
+        }
+    </script>
+    
 @endsection

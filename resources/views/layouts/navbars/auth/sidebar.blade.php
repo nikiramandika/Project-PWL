@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="nav-item mt-2">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Laravel Examples</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Management</h6>
             </li>
             <li class="nav-item pb-2">
                 <a class="nav-link {{ Request::is('user-management') ? 'active' : '' }}"

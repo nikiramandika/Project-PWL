@@ -54,6 +54,9 @@
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Category
                                         </th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Image
+                                        </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Brand
@@ -76,6 +79,18 @@
                                         </th>
                                         <th
                                             class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Sale
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Active
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Featured
+                                        </th>
+                                        <th
+                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Action
                                         </th>
                                     </tr>
@@ -87,13 +102,13 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $product->category->name }}</p>
                                             </td>
                                             <td class="text-center">
+                                                <div>
+                                                    <img src="{{ asset($product->image) }}" class="avatar avatar-sm me-3">
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $product->brand->name }}</p>
                                             </td>
-                                            {{-- <td>
-                                        <div>
-                                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td> --}}
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $product->name }}</p>
                                             </td>
@@ -106,18 +121,38 @@
                                             </td>
                                             <td class="text-center">
                                                 <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $product->in_stock }}</span>
+                                                    class="text-secondary text-xs font-weight-bold">{{ $product->in_stock ? 'On' : 'Off' }}</span>
                                             </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="text-secondary text-xs font-weight-bold">{{ $product->on_sale ? 'On' : 'Off' }}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="text-secondary text-xs font-weight-bold">{{ $product->is_active ? 'On' : 'Off' }}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="text-secondary text-xs font-weight-bold">{{ $product->is_featured ? 'On' : 'Off' }}</span>
+                                            </td>
+
                                             <td class="text-center">
                                                 <a href="/products/{{ $product->id }}/edit" class="mx-3"
                                                     data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
                                                 <span>
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Delete">
-                                                        <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                                    </a>
+                                                    <form id="delete-form-{{ $product->id }}"
+                                                        action="/products/{{ $product->id }}" method="POST"
+                                                        style="display: inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a href="#" class="mx-3"
+                                                            onclick="deleteProduct({{ $product->id }})"
+                                                            data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                        </a>
+                                                    </form>
                                                 </span>
                                             </td>
                                         </tr>
@@ -130,4 +165,12 @@
             </div>
         </div>
     </div>
+    <script>
+        function deleteProduct(productId) {
+            if (confirm('Are you sure you want to delete this product?')) {
+                event.preventDefault();
+                document.getElementById('delete-form-' + productId).submit();
+            }
+        }
+    </script>
 @endsection

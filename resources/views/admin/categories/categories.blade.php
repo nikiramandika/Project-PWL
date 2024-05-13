@@ -95,7 +95,7 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
+                                                    <img src="{{ asset( $category->image) }}" class="avatar avatar-sm me-3">
                                                 </div>
                                             </td>
                                             <td class="text-center">
@@ -105,7 +105,7 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $category->slug }}</p>
                                             </td>
                                             <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $category->is_active }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $category->is_active ? 'On' : 'Off' }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <span
@@ -122,10 +122,17 @@
                                                 </a>
 
                                                 <span>
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Delete">
-                                                        <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                                    </a>
+                                                    <form id="delete-form-{{ $category->id }}"
+                                                        action="/categories/{{ $category->id }}" method="POST"
+                                                        style="display: inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a href="#" class="mx-3"
+                                                            onclick="deleteCategory({{ $category->id }})"
+                                                            data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                        </a>
+                                                    </form>
                                                 </span>
                                             </td>
                                         </tr>
@@ -138,4 +145,12 @@
             </div>
         </div>
     </div>
+    <script>
+        function deleteCategory(categoryId) {
+            if (confirm('Are you sure you want to delete this category?')) {
+                event.preventDefault();
+                document.getElementById('delete-form-' + categoryId).submit();
+            }
+        }
+    </script>
 @endsection

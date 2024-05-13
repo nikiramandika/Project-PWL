@@ -83,8 +83,10 @@
                                     @foreach ($orders as $order)
                                         <tr>
                                             <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $order->user->name }}</p>
+                                                <a href="orders/{{ $order->id }}/view"
+                                                    class="text-xs font-weight-bold mb-0">{{ $order->user->name }}</a>
                                             </td>
+
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">Rp.{{ $order->grand_total }}</p>
                                             </td>
@@ -108,12 +110,22 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $order->notes }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="Edit user">
-                                                    <i class="fas fa-user-edit text-secondary"></i>
+                                                <a href="/orders/{{ $order->id }}/view" class="mx-3"
+                                                    data-bs-toggle="tooltip" data-bs-original-title="View user">
+                                                    <i class="fas fa-eye text-secondary"></i>
                                                 </a>
                                                 <span>
-                                                    <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                    <form id="delete-form-{{ $order->id }}"
+                                                        action="/orders/{{ $order->id }}" method="POST"
+                                                        style="display: inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a href="#" class="mx-3"
+                                                            onclick="deleteOrder({{ $order->id }})"
+                                                            data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                        </a>
+                                                    </form>
                                                 </span>
                                             </td>
                                         </tr>
@@ -126,4 +138,12 @@
             </div>
         </div>
     </div>
+    <script>
+        function deleteOrder(orderId) {
+            if (confirm('Are you sure you want to delete this order?')) {
+                event.preventDefault();
+                document.getElementById('delete-form-' + orderId).submit();
+            }
+        }
+    </script>
 @endsection

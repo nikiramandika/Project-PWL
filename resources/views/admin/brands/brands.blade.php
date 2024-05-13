@@ -8,10 +8,10 @@
             }
         </style>
 
-        @if (session()->has('success'))
+        @if (session()->has('successs'))
             <div id="success-alert" class="alert alert-secondary mx-4" role="alert">
                 <span class="text-white">
-                    {{ session('success') }}
+                    {{ session('successs') }}
                 </span>
             </div>
         @endif
@@ -94,10 +94,10 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <img src="../../../storage/app/public/brands/01HX0YYFVCQCKC1VNJTSFSZ0VD.jpg"
-                                                        class="avatar avatar-sm me-3">
+                                                    <img src="{{ asset( $brand->image) }}" class="avatar avatar-sm me-3">
                                                 </div>
                                             </td>
+                                            
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">{{ $brand->name }}</p>
                                             </td>
@@ -105,7 +105,8 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $brand->slug }}</p>
                                             </td>
                                             <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $brand->is_active }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">
+                                                    {{ $brand->is_active ? 'On' : 'Off' }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <span
@@ -116,16 +117,24 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $brand->updated_at }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="/brands/{{ $brand->id}}/edit" class="mx-3" data-bs-toggle="tooltip"
-                                                    data-bs-original-title="Edit user">
+                                                <a href="/brands/{{ $brand->id }}/edit" class="mx-3"
+                                                    data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
                                                 <span>
-                                                    <a href="#" class="mx-3" data-bs-toggle="tooltip"
-                                                        data-bs-original-title="Delete">
-                                                        <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                                    </a>
+                                                    <form id="delete-form-{{ $brand->id }}"
+                                                        action="/brands/{{ $brand->id }}" method="POST"
+                                                        style="display: inline;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a href="#" class="mx-3"
+                                                            onclick="deleteBrand({{ $brand->id }})"
+                                                            data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                        </a>
+                                                    </form>
                                                 </span>
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -137,4 +146,12 @@
             </div>
         </div>
     </div>
+    <script>
+        function deleteBrand(brandId) {
+            if (confirm('Are you sure you want to delete this brand?')) {
+                event.preventDefault();
+                document.getElementById('delete-form-' + brandId).submit();
+            }
+        }
+    </script>
 @endsection

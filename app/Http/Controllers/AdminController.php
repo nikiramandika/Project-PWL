@@ -49,7 +49,14 @@ class AdminController extends Controller
 
         return redirect('/user-management')->with('successs', 'Data Berhasil Diupdate.');
     }
-
-
-
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/user-management')->with('successs', 'Data Berhasil Dihapus.');
+    }
 }
+
+
+
+
