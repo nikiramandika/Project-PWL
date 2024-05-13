@@ -11,8 +11,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
+use App\Http\Middleware\RedirectIfNotAdmin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,17 +26,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::group(['middleware' => 'auth'], function () {
-
+Route::group(['middleware' => ['auth', RedirectIfNotAdmin::class]], function () {
+	// Rute yang memerlukan autentikasi
 	Route::get('/', [HomeController::class, 'home']);
-	Route::get('dashboard', function () {
-		return view('dashboard');
-	})->name('dashboard');
-
-	Route::get('profile', function () {
-		return view('profile');
-	})->name('profile');
 
 	Route::get('/user-management', [AdminController::class, 'index']);
 	Route::post('/user-management', [AdminController::class, 'store']);
@@ -44,7 +36,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/user-management/{id}/edit', [AdminController::class, 'edit']);
 	Route::put('/user-management/{id}', [AdminController::class, 'update']);
 	Route::delete('/user-management/{id}', [AdminController::class, 'destroy']);
-
 
 	Route::get('/brands', [BrandController::class, 'index']);
 	Route::post('/brands', [BrandController::class, 'store']);
@@ -60,14 +51,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('/categories/{id}', [CategoryController::class, 'update']);
 	Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
 
-
 	Route::get('/products', [ProductController::class, 'index']);
 	Route::post('/products', [ProductController::class, 'store']);
 	Route::get('/products/create', [ProductController::class, 'create']);
 	Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
 	Route::put('/products/{id}', [ProductController::class, 'update']);
 	Route::delete('/products/{id}', [ProductController::class, 'destroy']);
-
 
 	Route::get('/orders', [OrderController::class, 'index']);
 	Route::post('/orders', [OrderController::class, 'store']);
@@ -77,21 +66,22 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('/orders/{orderId}', [OrderController::class, 'update']);
 	Route::delete('/orders/{orderId}', [OrderController::class, 'destroy']);
 
-
-
-
-
 	Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
-	Route::get('/login', function () {
-		return view('dashboard');
-	})->name('sign-up');
+
+	Route::get('/dashboard', function () {
+		// Periksa apakah pengguna adalah admin
+		if (Auth::check() && Auth::user()->role === 'admin') {
+			return view('dashboard');
+		} else {
+			return redirect()->route('welcome'); // Mengarahkan pengguna ke halaman selamat datang jika bukan admin
+		}
+	})->name('dashboard');
 });
 
-
-
 Route::group(['middleware' => 'guest'], function () {
+	// Rute untuk pengguna yang belum login
 	Route::get('/register', [RegisterController::class, 'create']);
 	Route::post('/register', [RegisterController::class, 'store']);
 	Route::get('/login', [SessionsController::class, 'create']);
@@ -100,9 +90,20 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
 	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
-
 });
+
+Route::post('/logout', [SessionsController::class, 'destroy'])->name('logout');
+
 
 Route::get('/login', function () {
 	return view('session/login-session');
 })->name('login');
+
+Route::get('/welcome', function () {
+	return view('welcome');
+})->name('welcome');
+
+Route::get('/', function () {
+	return view('welcome');
+});
+

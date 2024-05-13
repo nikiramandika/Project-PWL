@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 
 class SessionsController extends Controller
 {
@@ -13,29 +11,40 @@ class SessionsController extends Controller
         return view('session.login-session');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $attributes = request()->validate([
-            'email'=>'required|email',
-            'password'=>'required'
+        // Validasi input pengguna
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
-        if(Auth::attempt($attributes))
-        {
-            session()->regenerate();
-            return redirect('dashboard')->with(['success'=>'You are logged in.']);
-        }
-        else{
+        // Dapatkan kredensial pengguna dari permintaan
+        $credentials = $request->only('email', 'password');
 
-            return back()->withErrors(['email'=>'Email or password invalid.']);
+        // Lakukan proses otentikasi pengguna
+        if (Auth::attempt($credentials)) {
+            // Dapatkan informasi pengguna yang berhasil login
+            $user = Auth::user();
+
+            // Periksa peran pengguna
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard'); // Mengarahkan ke dashboard jika peran adalah admin
+            } else {
+                return redirect()->route('welcome'); // Mengarahkan ke halaman selamat datang untuk peran selain admin
+            }
         }
+
+        // Jika otentikasi gagal, kembali ke halaman login dengan pesan kesalahan
+        return redirect()->route('login')->withErrors(['msg' => 'Invalid credentials']);
     }
-    
+
     public function destroy()
     {
-
+        // Lakukan proses logout pengguna
         Auth::logout();
 
-        return redirect('/login')->with(['success'=>'You\'ve been logged out.']);
+        // Redirect ke halaman login dengan pesan sukses
+        return redirect('/login')->with(['success' => 'You\'ve been logged out.']);
     }
 }
