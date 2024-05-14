@@ -19,14 +19,14 @@
                 <div class="card mb-4 mx-4">
                     <div class="card-header pb-0">
                         <div class="d-flex flex-row justify-content-between">
-                            <a href="{{ url('brands') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
+                            <a href="{{ url('brands-management') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
                             <div>
                                 <h5 class="mb-0">Edit Brands</h5>
                             </div>
                         </div>
                     </div>
                     <div class="card-body px-4 pt-0 pb-2">
-                        <form action="/brands/{{ $brand->id }}" method="POST">
+                        <form action="/brands-management/{{ $brand->id }}" method="POST">
                             @method('put')
                             @csrf
                             <input type="hidden" name="is_active" id="active" value="{{ $brand->is_active }}">

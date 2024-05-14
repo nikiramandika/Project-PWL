@@ -20,14 +20,14 @@
                 <div class="card mb-4 mx-4">
                     <div class="card-header pb-0">
                         <div class="d-flex flex-row justify-content-between">
-                            <a href="{{ url('categories') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
+                            <a href="{{ url('categories-management') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
                             <div>
                                 <h5 class="mb-0">Add Category</h5>
                             </div>
                         </div>
                     </div>
                     <div class="card-body px-4 pt-0 pb-2">
-                        <form action="/categories" method="POST" enctype="multipart/form-data">
+                        <form action="/categories-management" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="is_active" id="active" value="0">
                             <div class="mb-3">

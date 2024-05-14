@@ -42,7 +42,7 @@
                             <div>
                                 <h5 class="mb-0">All Products</h5>
                             </div>
-                            <a href="{{ url('products/create') }}" class="btn bg-gradient-primary btn-sm mb-0"
+                            <a href="{{ url('products-management/create') }}" class="btn bg-gradient-primary btn-sm mb-0"
                                 type="button">+&nbsp; New Product</a>
                         </div>
                     </div>
@@ -137,13 +137,13 @@
                                             </td>
 
                                             <td class="text-center">
-                                                <a href="/products/{{ $product->id }}/edit" class="mx-3"
+                                                <a href="/products-management/{{ $product->id }}/edit" class="mx-3"
                                                     data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
                                                 <span>
                                                     <form id="delete-form-{{ $product->id }}"
-                                                        action="/products/{{ $product->id }}" method="POST"
+                                                        action="/products-management/{{ $product->id }}" method="POST"
                                                         style="display: inline;">
                                                         @csrf
                                                         @method('DELETE')

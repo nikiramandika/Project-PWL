@@ -8,7 +8,7 @@
                 <div class="card mb-4 mx-4">
                     <div class="card-header pb-0">
                         <div class="d-flex flex-row justify-content-between">
-                            <a href="{{ url('orders') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
+                            <a href="{{ url('orders-management') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
                             <div>
                                 <h5 class="mb-0">View Order</h5>
                             </div>
@@ -42,7 +42,7 @@
                         </div>
                         
                         
-                        <form action="/orders/{{ $order->id }}" method="POST">
+                        <form action="/orders-management/{{ $order->id }}" method="POST">
                             @csrf
                             @method('PUT')
 

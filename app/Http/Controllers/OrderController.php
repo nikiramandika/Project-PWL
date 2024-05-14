@@ -44,7 +44,7 @@ class OrderController extends Controller
         $order->status = $request->status;
         $order->save();
 
-        return redirect('/orders')->with('successs', 'Data Berhasil Diupdate.');
+        return redirect('/orders-management')->with('successs', 'Data Berhasil Diupdate.');
     }
 
 
@@ -57,6 +57,6 @@ class OrderController extends Controller
     {
         $order = Order::find($orderId);
         $order->delete();
-        return redirect('/orders')->with('successs', 'Data Berhasil Dihapus.');
+        return redirect('/orders-management')->with('successs', 'Data Berhasil Dihapus.');
     }
 }

@@ -62,7 +62,7 @@ class ProductController extends Controller
         $product->save();
 
         // Redirect dengan pesan sukses
-        return redirect('/products')->with('successs', 'Data Berhasil Ditambahkan.');
+        return redirect('/products-management')->with('successs', 'Data Berhasil Ditambahkan.');
     }
 
 
@@ -123,13 +123,13 @@ class ProductController extends Controller
         $product->save();
 
         // Redirect dengan pesan sukses
-        return redirect('/products')->with('successs', 'Data Berhasil Diupdate.');
+        return redirect('/products-management')->with('successs', 'Data Berhasil Diupdate.');
     }
     public function destroy($id)
     {
         $product = Product::find($id);
         $product->delete();
-        return redirect('/products')->with('successs', 'Data Berhasil Dihapus.');
+        return redirect('/products-management')->with('successs', 'Data Berhasil Dihapus.');
     }
 
 }

@@ -44,7 +44,7 @@
                             <div>
                                 <h5 class="mb-0">All Brands</h5>
                             </div>
-                            <a href="{{ url('brands/create') }}" class="btn bg-gradient-primary btn-sm mb-0"
+                            <a href="{{ url('brands-management/create') }}" class="btn bg-gradient-primary btn-sm mb-0"
                                 type="button">+&nbsp; New Brand</a>
                         </div>
                     </div>
@@ -117,13 +117,13 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $brand->updated_at }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="/brands/{{ $brand->id }}/edit" class="mx-3"
+                                                <a href="/brands-management/{{ $brand->id }}/edit" class="mx-3"
                                                     data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
                                                 <span>
                                                     <form id="delete-form-{{ $brand->id }}"
-                                                        action="/brands/{{ $brand->id }}" method="POST"
+                                                        action="/brands-management/{{ $brand->id }}" method="POST"
                                                         style="display: inline;">
                                                         @csrf
                                                         @method('DELETE')

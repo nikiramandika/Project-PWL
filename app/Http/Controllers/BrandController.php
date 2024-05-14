@@ -41,7 +41,7 @@ class BrandController extends Controller
             'is_active' => $request->is_active,
         ]);
 
-        return redirect('/brands')->with('successs', 'Data Berhasil Ditambahkan.');
+        return redirect('/brands-management')->with('successs', 'Data Berhasil Ditambahkan.');
     }
 
 
@@ -67,13 +67,13 @@ class BrandController extends Controller
             'image' => $request->image,
             'is_active' => $request->is_active,
         ]);
-        return redirect('/brands')->with('successs', 'Data Berhasil Diupdate.');
+        return redirect('/brands-management')->with('successs', 'Data Berhasil Diupdate.');
     }
 
     public function destroy($id)
     {
         $brand = Brand::find($id);
         $brand->delete();
-        return redirect('/brands')->with('successs', 'Data Berhasil Dihapus.');
+        return redirect('/brands-management')->with('successs', 'Data Berhasil Dihapus.');
     }
 }

@@ -44,7 +44,7 @@
                             <div>
                                 <h5 class="mb-0">All Categories</h5>
                             </div>
-                            <a href="{{ url('categories/create') }}" class="btn bg-gradient-primary btn-sm mb-0"
+                            <a href="{{ url('categories-management/create') }}" class="btn bg-gradient-primary btn-sm mb-0"
                                 type="button">+&nbsp; New
                                 Category</a>
                         </div>
@@ -116,14 +116,14 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $category->updated_at }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="/categories/{{ $category->id }}/edit" class="mx-3"
+                                                <a href="/categories-management/{{ $category->id }}/edit" class="mx-3"
                                                     data-bs-toggle="tooltip" data-bs-original-title="Edit category">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
 
                                                 <span>
                                                     <form id="delete-form-{{ $category->id }}"
-                                                        action="/categories/{{ $category->id }}" method="POST"
+                                                        action="/categories-management/{{ $category->id }}" method="POST"
                                                         style="display: inline;">
                                                         @csrf
                                                         @method('DELETE')

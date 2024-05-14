@@ -41,7 +41,7 @@ class CategoryController extends Controller
             'is_active' => $request->is_active,
         ]);
 
-        return redirect('/categories')->with('successs', 'Data Berhasil Ditambahkan.');
+        return redirect('/categories-management')->with('successs', 'Data Berhasil Ditambahkan.');
     }
 
     public function edit($id)
@@ -66,13 +66,13 @@ class CategoryController extends Controller
             'is_active' => $request->is_active,
         ]);
 
-        return redirect('/categories')->with('successs', 'Data Berhasil Diupdate.');
+        return redirect('/categories-management')->with('successs', 'Data Berhasil Diupdate.');
     }
 
     public function destroy($id)
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect('/categories')->with('successs', 'Data Berhasil Dihapus.');
+        return redirect('/categories-management')->with('successs', 'Data Berhasil Dihapus.');
     }
 }

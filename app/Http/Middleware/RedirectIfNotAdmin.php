@@ -18,7 +18,7 @@ class RedirectIfNotAdmin
     public function handle(Request $request, Closure $next)
     {
         if (Auth::check() && Auth::user()->role !== 'admin') {
-            return redirect()->route('welcome'); // Mengarahkan pengguna ke halaman selamat datang jika bukan admin
+            return redirect()->route('user.page');
         }
 
         return $next($request);

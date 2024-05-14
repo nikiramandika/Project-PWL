@@ -83,7 +83,7 @@
                                     @foreach ($orders as $order)
                                         <tr>
                                             <td class="ps-4">
-                                                <a href="orders/{{ $order->id }}/view"
+                                                <a href="orders-management/{{ $order->id }}/view"
                                                     class="text-xs font-weight-bold mb-0">{{ $order->user->name }}</a>
                                             </td>
 
@@ -110,13 +110,13 @@
                                                     class="text-secondary text-xs font-weight-bold">{{ $order->notes }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="/orders/{{ $order->id }}/view" class="mx-3"
+                                                <a href="/orders-management/{{ $order->id }}/view" class="mx-3"
                                                     data-bs-toggle="tooltip" data-bs-original-title="View user">
                                                     <i class="fas fa-eye text-secondary"></i>
                                                 </a>
                                                 <span>
                                                     <form id="delete-form-{{ $order->id }}"
-                                                        action="/orders/{{ $order->id }}" method="POST"
+                                                        action="/orders-management/{{ $order->id }}" method="POST"
                                                         style="display: inline;">
                                                         @csrf
                                                         @method('DELETE')
