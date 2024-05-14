@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body px-4 pt-0 pb-2">
+                    <div class="card-body px-4 pt-0 pb-2 card-body-table">
                         <form action="/products-management" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="is_active" id="active" value="0">

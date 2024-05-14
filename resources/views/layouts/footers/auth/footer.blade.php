@@ -6,7 +6,7 @@
                     © <script>
                         document.write(new Date().getFullYear())
                     </script>, made with <i class="fa fa-heart"></i> by
-                    <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Tim 4 PPWL</a> &amp; <a style="color: #252f40;" href="https://www.updivision.com" class="font-weight-bold ml-1" target="_blank">Apa nama kelompoknya?</a>
+                    <a href="#" class="font-weight-bold" target="_blank">Tim 4 PPWL</a> &amp; <a style="color: #252f40;" href="#" class="font-weight-bold ml-1" target="_blank">Apa nama kelompoknya?</a>
                     for a better web.
                 </div>
             </div>

@@ -1,3 +1,8 @@
+<style>
+    body {
+        overflow: hidden;
+    }
+</style>
 @extends('layouts.app')
 
 @section('auth')
@@ -51,8 +56,6 @@
                 </div>
             </main>
         @endif
-
-        @include('components.fixed-plugin')
     @endif
 
     
