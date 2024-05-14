@@ -31,7 +31,7 @@ class SessionsController extends Controller
             if ($user->role === 'admin') {
                 return redirect()->route('dashboard'); // Mengarahkan ke dashboard jika peran adalah admin
             } else {
-                return redirect()->route('welcome'); // Mengarahkan ke halaman selamat datang untuk peran selain admin
+                return redirect()->route('user.page'); // Mengarahkan ke halaman selamat datang untuk peran selain admin
             }
         }
 

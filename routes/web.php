@@ -12,6 +12,20 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Middleware\RedirectIfNotAdmin;
+use App\Livewire\Auth\ForgotPasswordPage;
+use App\Livewire\Auth\LoginPage;
+use App\Livewire\Auth\RegisterPage;
+use App\Livewire\Auth\ResetPasswordPage;
+use App\Livewire\CancelPage;
+use App\Livewire\CartPage;
+use App\Livewire\CategoriesPage;
+use App\Livewire\CheckoutPage;
+use App\Livewire\MyOrderDetailPage;
+use App\Livewire\MyOrdersPage;
+use App\Livewire\ProductDetailPage;
+use App\Livewire\ProductsPage;
+use App\Livewire\SuccessPage;
+use App\Livewire\UserPage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -75,7 +89,7 @@ Route::group(['middleware' => ['auth', RedirectIfNotAdmin::class]], function () 
 		if (Auth::check() && Auth::user()->role === 'admin') {
 			return view('dashboard');
 		} else {
-			return redirect()->route('welcome'); // Mengarahkan pengguna ke halaman selamat datang jika bukan admin
+			return redirect()->route('user.page'); // Mengarahkan pengguna ke halaman user jika bukan admin
 		}
 	})->name('dashboard');
 });
@@ -101,9 +115,26 @@ Route::get('/login', function () {
 
 Route::get('/welcome', function () {
 	return view('welcome');
-})->name('welcome');
+})->name('welcome');;
 
 Route::get('/', function () {
 	return view('welcome');
 });
 
+Route::get('/user-page', UserPage::class)->name('user.page');
+Route::get('/categories', CategoriesPage::class)->name('categories.page');
+Route::get('/products', ProductsPage::class)->name('products.page');
+Route::get('/cart', CartPage::class)->name('cart.page');
+Route::get('/products/{product}', ProductDetailPage::class)->name('productdetail.page');
+
+Route::get('/checkout', CheckoutPage::class)->name('checkout.page');
+Route::get('/my-orders', MyOrdersPage::class)->name('my-orders.page');
+Route::get('/my-orders/{order}', MyOrderDetailPage::class)->name('my-orders-detail.page');
+
+Route::get('/login-user', LoginPage::class);
+Route::get('/register-user', RegisterPage::class);
+Route::get('/forgot-user', ForgotPasswordPage::class);
+Route::get('/reset-user', ResetPasswordPage::class);
+
+Route::get('/success', SuccessPage::class);
+Route::get('/cancel', CancelPage::class);
