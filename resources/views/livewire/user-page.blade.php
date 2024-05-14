@@ -9,7 +9,15 @@
                 <div>
                     <h1
                         class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-                        Start your journey with <span class="text-blue-600">DCodeMania</span></h1>
+                        Hi @if (auth()->check())
+                            {{ auth()->user()->name }}
+                        @endif
+                    </h1>
+                    <h1
+                        class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
+                        Selamat Berbelanja di <span class="text-blue-600">PPWL </span>
+                    </h1>
+
                     <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Purchase wide varities of electronics
                         products like Smartphones, Laptops, Smartwatches, Television and many more.</p>
 
@@ -283,8 +291,7 @@
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
                                     <img class="h-[2.375rem] w-[2.375rem] rounded-full"
-                                        src="{{ asset($category->image) }}"
-                                        alt="Image Description">
+                                        src="{{ asset($category->image) }}" alt="Image Description">
                                     <div class="ms-3">
                                         <h3
                                             class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
