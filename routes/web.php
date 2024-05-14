@@ -125,7 +125,7 @@ Route::get('/', UserPage::class)->name('user.page');
 Route::get('/categories', CategoriesPage::class)->name('categories.page');
 Route::get('/products', ProductsPage::class)->name('products.page');
 Route::get('/cart', CartPage::class)->name('cart.page');
-Route::get('/products/{product}', ProductDetailPage::class)->name('productdetail.page');
+Route::get('/products/{slug}', ProductDetailPage::class)->name('productdetail.page');
 
 Route::get('/checkout', CheckoutPage::class)->name('checkout.page');
 Route::get('/my-orders', MyOrdersPage::class)->name('my-orders.page');
