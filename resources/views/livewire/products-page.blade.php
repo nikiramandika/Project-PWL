@@ -82,7 +82,7 @@
                       </h3>
                     </div>
                     <p class="text-lg ">
-                      <span class="text-green-600 dark:text-green-600">{{ Number::currency($product->price, 'IDR') }}  </span>
+                      <span class="text-green-600 dark:text-green-600">{{ $product->price }}  </span>
                     </p>
                   </div>
                   <div class="flex justify-center p-4 border-t border-gray-300 dark:border-gray-700">
