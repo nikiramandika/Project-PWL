@@ -2,9 +2,12 @@
 
 namespace App\Livewire;
 
+use App\Helpers\CartManagement;
+use App\Livewire\Partials\Navbar;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Url;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -14,6 +17,7 @@ use Livewire\WithPagination;
 #[Title('Products - PPWL')]
 class ProductsPage extends Component
 {
+    use LivewireAlert;
     use WithPagination;
 
     #[Url]
@@ -24,6 +28,22 @@ class ProductsPage extends Component
     public $featured;
     #[Url]
     public $on_sale;
+
+    #[Url]
+    public $sort = 'latest';
+
+    //add
+    public function addToCart($product_id){
+        $total_count = CartManagement::addItemToCart($product_id);  
+        $this->dispatch('update-cart-count', total_count: $total_count)->to(Navbar::class); 
+
+        $this->alert('success', 'Added to cart successfully!', [
+            'position' => 'bottom-end',
+            'timer' => 3000,
+            'toast' => true,
+            'width' => '',
+           ]);
+    }
 
     public function render(){
 
@@ -43,6 +63,14 @@ class ProductsPage extends Component
 
         if (!empty($this->on_sale)){
             $productQuery->where('on_sale', 1);
+        }
+
+        if ($this->sort == 'latest'){
+            $productQuery->latest();
+        }
+
+        if ($this->sort == 'price'){
+            $productQuery->orderBy('price');
         }
 
 

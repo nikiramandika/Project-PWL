@@ -7,6 +7,28 @@ body {
     min-height: 60vh;
 }
 
+::-webkit-scrollbar {
+    height: 7px!important;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #888;
+    border-radius: 100px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #464646;
+    border-radius: 100px;
+
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
