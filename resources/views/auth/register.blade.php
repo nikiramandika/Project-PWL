@@ -37,20 +37,18 @@
                   @enderror
                 </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control" placeholder="Password" name="password" id="password" aria-label="Password" aria-describedby="password-addon">
-                  @error('password')
-                    <p class="text-danger text-xs mt-2">{{ $message }}</p>
-                  @enderror
-                </div>
-                <div class="mt-4">
-                  <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-      
-                  <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                  type="password"
-                                  name="password_confirmation" required autocomplete="new-password" />
-      
-                  <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-              </div>
+                    <input type="password" class="form-control" placeholder="Password" name="password" id="password" aria-label="Password" aria-describedby="password-addon">
+                    @error('password')
+                      <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                  </div>
+                  <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" id="password_confirmation" aria-label="Confirm Password" aria-describedby="password-confirmation-addon" required autocomplete="new-password">
+                    @error('password_confirmation')
+                      <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                  </div>
+                  
                 <div class="form-check form-check-info text-left">
                   <input class="form-check-input" type="checkbox" name="agreement" id="flexCheckDefault" checked>
                   <label class="form-check-label" for="flexCheckDefault">

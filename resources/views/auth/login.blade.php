@@ -29,7 +29,7 @@
                                             }, 4000); // Hide the flash message after 4 seconds
                                         </script>
                                     @endif
-                                    <form role="form" method="POST" action="{{ route('login') }}">
+                                    <form role="form" method="POST" action="/auth">
                                         @csrf
                                         <label>Email</label>
                                         <div class="mb-3">
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <small class="text-muted">Forgot you password? Reset you password
-                                        <a href="/forgot-password"
+                                        <a href="forgot-password"
                                             class="text-info text-gradient font-weight-bold">here</a>
                                     </small>
                                     <p class="mb-4 text-sm mx-auto">

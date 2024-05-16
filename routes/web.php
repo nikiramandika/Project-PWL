@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
@@ -40,8 +41,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+	return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+	return view('livewire.user-page');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+	Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+	Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+	Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+});
+
+require __DIR__ . '/auth.php';
+
+// Routes that require authentication and admin check
 Route::group(['middleware' => ['auth', RedirectIfNotAdmin::class]], function () {
-	// Rute yang memerlukan autentikasi
 	Route::get('/', [HomeController::class, 'home']);
 
 	Route::get('/user-management', [AdminController::class, 'index']);
@@ -92,22 +110,11 @@ Route::group(['middleware' => ['auth', RedirectIfNotAdmin::class]], function () 
 			return redirect()->route('user.page'); // Mengarahkan pengguna ke halaman user jika bukan admin
 		}
 	})->name('dashboard');
-});
 
-Route::group(['middleware' => 'guest'], function () {
-	// Rute untuk pengguna yang belum login
-	Route::get('/register', [RegisterController::class, 'create']);
-	Route::post('/register', [RegisterController::class, 'store']);
-	Route::get('/login', [SessionsController::class, 'create']);
-	Route::post('/session', [SessionsController::class, 'store']);
-	Route::get('/login/forgot-password', [ResetController::class, 'create']);
-	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
-	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
-	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 });
+Route::post('/login', [SessionsController::class, 'store'])->name('login');
 
 Route::post('/logout', [SessionsController::class, 'destroy'])->name('logout');
-
 
 Route::get('/login', function () {
 	return view('session/login-session');
@@ -115,26 +122,22 @@ Route::get('/login', function () {
 
 Route::get('/welcome', function () {
 	return view('welcome');
-})->name('welcome');;
+})->name('welcome');
 
-// Route::get('/', function () {
-// 	return view('welcome');
-// });
+// Frontend routes
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Rute yang memerlukan autentikasi dan verifikasi
+	Route::get('/cart', CartPage::class)->name('cart.page');
+	Route::get('/products/{slug}', ProductDetailPage::class)->name('productdetail.page');
+	Route::get('/checkout', CheckoutPage::class)->name('checkout.page');
+	Route::get('/my-orders', MyOrdersPage::class)->name('my-orders.page');
+	Route::get('/my-orders/{order}', MyOrderDetailPage::class)->name('my-orders-detail.page');
+	Route::get('/success', SuccessPage::class);
+	Route::get('/cancel', CancelPage::class);
+});
 
+// Rute yang dapat diakses tanpa autentikasi
 Route::get('/', UserPage::class)->name('user.page');
 Route::get('/categories', CategoriesPage::class)->name('categories.page');
 Route::get('/products', ProductsPage::class)->name('products.page');
-Route::get('/cart', CartPage::class)->name('cart.page');
-Route::get('/products/{slug}', ProductDetailPage::class)->name('productdetail.page');
 
-Route::get('/checkout', CheckoutPage::class)->name('checkout.page');
-Route::get('/my-orders', MyOrdersPage::class)->name('my-orders.page');
-Route::get('/my-orders/{order}', MyOrderDetailPage::class)->name('my-orders-detail.page');
-
-Route::get('/login-user', LoginPage::class);
-Route::get('/register-user', RegisterPage::class);
-Route::get('/forgot-user', ForgotPasswordPage::class);
-Route::get('/reset-user', ResetPasswordPage::class);
-
-Route::get('/success', SuccessPage::class);
-Route::get('/cancel', CancelPage::class);
