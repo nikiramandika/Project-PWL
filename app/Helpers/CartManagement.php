@@ -97,7 +97,7 @@ class CartManagement {
 
     //add cart item to cookie
     static public function addCartItemsToCookie($cart_items){
-        Cookie::queue('cart_items', json_encode($cart_items), 1);
+        Cookie::queue('cart_items', json_encode($cart_items), 100000);
     }
 
     //clear cart item from cookie
@@ -150,4 +150,3 @@ class CartManagement {
     }
 }
 
-?>

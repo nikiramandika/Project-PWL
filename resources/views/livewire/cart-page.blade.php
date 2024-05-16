@@ -25,7 +25,7 @@
                     </div>
                   </td>
                   <td class="py-4">
-                    {{ $item['unit_amount'], 'INR' }}
+                    {{ Number::currency($item['unit_amount'], 'IDR') }}
                   </td>
                   <td class="py-4">
                     <div class="flex items-center">
@@ -35,7 +35,7 @@
                     </div>
                   </td>
                   <td class="py-4">
-                    {{ $item['total_amount'], 'INR' }}
+                    {{ Number::currency($item['total_amount'], 'IDR') }}
                   </td>
                   <td>
                     <button wire:click='removeItem({{ $item['product_id'] }})' class="bg-slate-300 border-2 border-slate-400 rounded-lg px-3 py-1 hover:bg-red-500 hover:text-white hover:border-red-700"><span wire:loading.remove wire:target='removeItem({{ $item['product_id'] }})'>Remove</span><span wire:loading wire:target='removeItem({{ $item['product_id'] }})'>Removing...</span></button>
@@ -57,20 +57,20 @@
             <h2 class="text-lg font-semibold mb-4">Summary</h2>
             <div class="flex justify-between mb-2">
               <span>Subtotal</span>
-              <span>{{ $grand_total, 'INR' }}</span>
+              <span>{{ Number::currency($grand_total, 'IDR') }}</span>
             </div>
             <div class="flex justify-between mb-2">
               <span>Taxes</span>
-              <span>{{ 0, 'INR' }}</span>
+              <span>{{ Number::currency(0, 'IDR') }}</span>
             </div>
             <div class="flex justify-between mb-2">
               <span>Shipping</span>
-              <span>{{ 0, 'INR' }}</span>
+              <span>{{ Number::currency(0, 'IDR') }}</span>
             </div>
             <hr class="my-2">
             <div class="flex justify-between mb-2">
               <span class="font-semibold">Grand Total</span>
-              <span class="font-semibold">{{ $grand_total, 'INR' }}</span>
+              <span class="font-semibold">{{ Number::currency ($grand_total, 'IDR') }}</span>
             </div>
             @if ($cart_items)
               <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>  

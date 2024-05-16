@@ -115,7 +115,7 @@
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
                                                     
-                                                    <a href="/products-management/{{ $product->id }}/edit" class=""data-bs-toggle="tooltip" >{{Str::limit($product->description, 15, "..."); }}</a>
+                                                    <a href="/products-management/{{ $product->id }}/edit" class=""data-bs-toggle="tooltip" >{{Str::limit($product->description, 15, "...") }}</a>
                                                 </p>
                                             </td>
                                             <td class="text-center">
