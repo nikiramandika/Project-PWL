@@ -120,7 +120,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <span
-                                                    class="text-secondary text-xs font-weight-bold">Rp.{{ $product->price }}</span>
+                                                    class="text-secondary text-xs font-weight-bold">{{Number::currency ($product->price , 'IDR') }}</span>
                                             </td>
                                             <td class="text-center">
                                                 <span
