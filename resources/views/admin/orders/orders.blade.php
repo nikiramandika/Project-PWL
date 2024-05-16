@@ -88,7 +88,7 @@
                                             </td>
 
                                             <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">Rp.{{ $order->grand_total }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{Number::currency ( $order->grand_total , 'IDR') }}</p>
                                             </td>
                                             {{-- <td>
                                         <div>
@@ -134,6 +134,9 @@
                             </table>
                         </div>
                     </div>
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $orders->links('vendor.pagination.bootstrap-5') }}
                 </div>
             </div>
         </div>

@@ -36,7 +36,7 @@ class SessionsController extends Controller
         }
 
         // Jika otentikasi gagal, kembali ke halaman login dengan pesan kesalahan
-        return redirect()->route('login')->withErrors(['msg' => 'Invalid credentials']);
+        return redirect()->route('login')->withErrors(['error' => 'Email atau password yang Anda masukkan salah']);
     }
 
     public function destroy()

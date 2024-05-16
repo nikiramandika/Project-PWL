@@ -142,6 +142,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $categories->links('vendor.pagination.bootstrap-5') }}
+                </div>
             </div>
         </div>
     </div>
