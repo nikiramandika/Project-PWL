@@ -141,3 +141,14 @@ Route::get('/products', ProductsPage::class)->name('products.page');
 Route::get('/cart', CartPage::class)->name('cart.page');
 Route::get('/products/{slug}', ProductDetailPage::class)->name('productdetail.page');
 
+Route::middleware('auth')->group(function (){
+	Route::get('/logout', function () {
+		auth()->logout();
+		return redirect('/');
+	});
+	Route::get('/checkout', CheckoutPage::class);
+	Route::get('/my-orders', MyOrdersPage::class);
+	Route::get('/My-orders/(order)', MyOrderDetailPage::class);
+	Route::get('/success', SuccessPage::class)->name('success');
+	Route::get('/cancel', CancelPage::class)->name('cancel');
+});
