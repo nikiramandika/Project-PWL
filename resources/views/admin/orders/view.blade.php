@@ -25,6 +25,7 @@
                             @foreach ($orderItems as $item)
                                 <li>{{ $item->product->name }} - Jumlah: {{ $item->quantity }}</li>
                             @endforeach
+                            Total Harga : {{Number::currency ( $order->grand_total , 'IDR') }}
                         </ul>
 
                         <h5>Alamat Pengiriman:</h5>
