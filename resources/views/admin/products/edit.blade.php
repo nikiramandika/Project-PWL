@@ -21,7 +21,7 @@
                         <div class="d-flex flex-row justify-content-between">
                             <a href="{{ url('products-management') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
                             <div>
-                                <h5 class="mb-0">Add Product</h5>
+                                <h5 class="mb-0">Edit Product</h5>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description</label>
-                                <textarea name="description" class="form-control" id="description" rows="4">{{ old('description', $product->description) }}</textarea>
+                                <textarea name="description" class="form-control" id="editor" rows="4">{{ old('description', $product->description) }}</textarea>
                                 @error('description')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -85,6 +85,9 @@
                             </div>
                             <div class="mb-3">
                                 <label for="image" class="form-label">Image</label>
+                                @if ($product->image)
+                                    <img src="{{ asset($product->image) }}" alt="Current Image" class="img-thumbnail mb-2" style="max-width: 150px;">
+                                @endif
                                 <input name="image" type="file" class="form-control" id="image">
                                 @error('image')
                                     <div class="text-danger">{{ $message }}</div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BrandController extends Controller
@@ -57,18 +58,38 @@ class BrandController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'min:2'],
             'slug' => ['required', 'string', 'min:2'],
-            'image' => ['required'],
+            'image' => ['nullable', 'image'],
             'is_active' => ['required', 'string', 'max:255'],
         ]);
+
         $brand = Brand::find($id);
-        $brand->update([
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'image' => $request->image,
-            'is_active' => $request->is_active,
-        ]);
+
+        if (!$brand) {
+            return redirect('/brands-management')->with('error', 'Brand not found.');
+        }
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->storeAs('public/brand', Str::random(20) . '.' . $image->getClientOriginalExtension());
+            $imagePath = str_replace('public', 'storage', $imagePath);
+
+            // Hapus gambar lama jika ada
+            if ($brand->image) {
+                Storage::delete(str_replace('storage', 'public', $brand->image));
+            }
+
+            // Perbarui path gambar
+            $brand->image = $imagePath;
+        }
+
+        $brand->name = $request->name;
+        $brand->slug = $request->slug;
+        $brand->is_active = $request->is_active;
+        $brand->save();
+
         return redirect('/brands-management')->with('successs', 'Data Berhasil Diupdate.');
     }
+
 
     public function destroy($id)
     {

@@ -1,5 +1,6 @@
 @extends('layouts.user_type.guest')
 
+@section('title', 'Register')
 @section('content')
 
   <section class="min-vh-100 mb-8">

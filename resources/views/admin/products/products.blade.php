@@ -1,39 +1,39 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
-    <div>
-        <style>
-            .alert {
-                transition: opacity 0.5s ease;
-            }
-        </style>
+<div>
+    <style>
+        .alert {
+            transition: opacity 0.5s ease;
+        }
+    </style>
 
-        @if (session()->has('successs'))
-            <div id="success-alert" class="alert alert-secondary mx-4" role="alert">
-                <span class="text-white">
-                    {{ session('successs') }}
-                </span>
-            </div>
-        @endif
+    @if (session()->has('successs'))
+        <div id="success-alert" class="alert alert-secondary mx-4" role="alert">
+            <span class="text-white">
+                {{ session('successs') }}
+            </span>
+        </div>
+    @endif
 
-        <script>
-            // Ambil elemen alert
-            var alert = document.getElementById('success-alert');
+    <script>
+        // Ambil elemen alert
+        var alert = document.getElementById('success-alert');
 
-            // Set opacity menjadi 0
-            alert.style.opacity = '0';
+        // Set opacity menjadi 0
+        alert.style.opacity = '0';
 
-            // Hapus elemen alert setelah 4 detik
+        // Hapus elemen alert setelah 4 detik
+        setTimeout(function() {
+            alert.style.opacity = '1'; // Ubah opacity menjadi 1
             setTimeout(function() {
-                alert.style.opacity = '1'; // Ubah opacity menjadi 1
+                alert.style.opacity = '0'; // Kembali ubah opacity menjadi 0
                 setTimeout(function() {
-                    alert.style.opacity = '0'; // Kembali ubah opacity menjadi 0
-                    setTimeout(function() {
-                        alert.remove(); // Hapus elemen alert
-                    }, 500); // Waktu transisi (500ms = 0.5 detik)
-                }, 4000); // Waktu alert ditampilkan (4000ms = 4 detik)
-            }, 100); // Tunda sebentar sebelum memulai transisi (100ms = 0.1 detik)
-        </script>
+                    alert.remove(); // Hapus elemen alert
+                }, 500); // Waktu transisi (500ms = 0.5 detik)
+            }, 4000); // Waktu alert ditampilkan (4000ms = 4 detik)
+        }, 100); // Tunda sebentar sebelum memulai transisi (100ms = 0.1 detik)
+    </script>
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4 mx-4">
@@ -115,7 +115,10 @@
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
                                                     
-                                                    <a href="/products-management/{{ $product->id }}/edit" class=""data-bs-toggle="tooltip" >{{Str::limit($product->description, 15, "...") }}</a>
+                                                    <a href="{{ url('products-management/' . $product->id . '/edit') }}" data-bs-toggle="tooltip" >
+                                                        {!! Str::limit($product->description, 30, '...') !!}
+                                                    </a>
+                                                    
                                                 </p>
                                             </td>
                                             <td class="text-center">

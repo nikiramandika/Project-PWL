@@ -44,16 +44,13 @@ class ProductController extends Controller
 
         // Simpan gambar jika ada
         if ($request->hasFile('image')) {
-            // Simpan gambar jika ada
             $image = $request->file('image');
             $imagePath = $image->storeAs('public/product', Str::random(20) . '.' . $image->getClientOriginalExtension());
-            // Ubah path agar sesuai dengan direktori publik
             $imagePath = str_replace('public', 'storage', $imagePath);
         } else {
-            // Jika tidak ada gambar yang diunggah, atur path gambar ke null
             $imagePath = null;
         }
-        // Buat produk baru dengan data yang diterima dari formulir
+
         $product = new Product();
         $product->name = $request->name;
         $product->slug = $request->slug;
@@ -62,10 +59,9 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->in_stock = $request->in_stock;
-        $product->image = $imagePath; // Atur path gambar
+        $product->image = $imagePath;
         $product->save();
 
-        // Redirect dengan pesan sukses
         return redirect('/products-management')->with('successs', 'Data Berhasil Ditambahkan.');
     }
 
@@ -94,25 +90,22 @@ class ProductController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Cari produk berdasarkan ID
         $product = Product::find($id);
 
-        // Jika produk tidak ditemukan, kembalikan response dengan status 404 (Not Found)
         if (!$product) {
             return response()->json(['message' => 'Product not found.'], 404);
         }
 
-        // Update gambar jika ada perubahan
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('product_image');
-            // Hapus gambar lama jika ada
+            $image = $request->file('image');
+            $imagePath = $image->storeAs('public/product', Str::random(20) . '.' . $image->getClientOriginalExtension());
+            $imagePath = str_replace('public', 'storage', $imagePath);
             if ($product->image) {
-                Storage::delete($product->image);
+                Storage::delete(str_replace('storage', 'public', $product->image));
             }
             $product->image = $imagePath;
         }
 
-        // Update data produk dengan data yang diterima dari formulir
         $product->name = $request->name;
         $product->slug = $request->slug;
         $product->category_id = $request->category_id;
@@ -125,14 +118,16 @@ class ProductController extends Controller
         $product->on_sale = $request->on_sale;
         $product->save();
 
-        // Redirect dengan pesan sukses
         return redirect('/products-management')->with('successs', 'Data Berhasil Diupdate.');
     }
+
     public function destroy($id)
     {
         $product = Product::find($id);
+        if ($product->image) {
+            Storage::delete(str_replace('storage', 'public', $product->image));
+        }
         $product->delete();
         return redirect('/products-management')->with('successs', 'Data Berhasil Dihapus.');
     }
-
 }

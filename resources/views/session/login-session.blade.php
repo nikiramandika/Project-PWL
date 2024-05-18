@@ -1,5 +1,6 @@
 @extends('layouts.user_type.guest')
 
+@section('title', 'Login')
 @section('content')
     <main class="main-content  mt-0">
         <section>

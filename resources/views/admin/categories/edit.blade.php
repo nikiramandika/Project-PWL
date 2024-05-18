@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="card-body px-4 pt-0 pb-2">
-                        <form action="/categories-management/{{ $category->id }}" method="POST">
+                        <form action="/categories-management/{{ $category->id }}" method="POST" enctype="multipart/form-data">
                             @method('put')
                             @csrf
                             <input type="hidden" name="is_active" id="active" value="{{ $category->is_active }}">
@@ -43,8 +43,13 @@
 
                             <div class="mb-3">
                                 <label for="image" class="form-label">Image</label>
-                                <input name="image" type="file" class="form-control" id="image"
-                                    value="{{ $category->image }}">
+                                @if ($category->image)
+                                    <img src="{{ asset($category->image) }}" alt="Current Image" class="img-thumbnail mb-2" style="max-width: 150px;">
+                                @endif
+                                <input name="image" type="file" class="form-control" id="image">
+                                @error('image')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="form-check form-switch">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
@@ -21,17 +22,15 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'name' => ['required', 'string', 'min:2'],
             'slug' => ['required', 'string', 'min:2'],
-            'image' => ['required', 'image'],
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'is_active' => ['required', 'string', 'max:255'],
         ]);
 
         $image = $request->file('image');
         $imagePath = $image->storeAs('public/categories', Str::random(20) . '.' . $image->getClientOriginalExtension());
-        // Ubah path agar sesuai dengan direktori publik
         $imagePath = str_replace('public', 'storage', $imagePath);
 
         Category::create([
@@ -55,16 +54,34 @@ class CategoryController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'min:2'],
             'slug' => ['required', 'string', 'min:2'],
-            'image' => ['required'],
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'is_active' => ['required', 'string', 'max:255'],
         ]);
+
         $category = Category::find($id);
-        $category->update([
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'image' => $request->image,
-            'is_active' => $request->is_active,
-        ]);
+
+        if (!$category) {
+            return redirect('/categories-management')->with('error', 'Category not found.');
+        }
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imagePath = $image->storeAs('public/categories', Str::random(20) . '.' . $image->getClientOriginalExtension());
+            $imagePath = str_replace('public', 'storage', $imagePath);
+
+            // Hapus gambar lama jika ada
+            if ($category->image) {
+                Storage::delete(str_replace('storage', 'public', $category->image));
+            }
+
+            // Perbarui path gambar
+            $category->image = $imagePath;
+        }
+
+        $category->name = $request->name;
+        $category->slug = $request->slug;
+        $category->is_active = $request->is_active;
+        $category->save();
 
         return redirect('/categories-management')->with('successs', 'Data Berhasil Diupdate.');
     }
@@ -72,6 +89,15 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
+
+        if (!$category) {
+            return redirect('/categories-management')->with('error', 'Category not found.');
+        }
+
+        if ($category->image) {
+            Storage::delete(str_replace('storage', 'public', $category->image));
+        }
+
         $category->delete();
         return redirect('/categories-management')->with('successs', 'Data Berhasil Dihapus.');
     }
