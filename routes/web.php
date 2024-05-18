@@ -45,7 +45,7 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/home', function () {
 	return view('livewire.user-page');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -125,30 +125,20 @@ Route::get('/welcome', function () {
 })->name('welcome');
 
 // Frontend routes
-Route::middleware(['auth', 'verified'])->group(function () {
-    // Rute yang memerlukan autentikasi dan verifikasi
-	Route::get('/checkout', CheckoutPage::class)->name('checkout.page');
-	Route::get('/my-orders', MyOrdersPage::class)->name('my-orders.page');
-	Route::get('/my-orders/{order}', MyOrderDetailPage::class)->name('my-orders-detail.page');
-	Route::get('/success', SuccessPage::class);
-	Route::get('/cancel', CancelPage::class);
-});
+// Rute yang dapat diakses tanpa login
 
-// Rute yang dapat diakses tanpa autentikasi
 Route::get('/', UserPage::class)->name('user.page');
-Route::get('/categories', CategoriesPage::class)->name('categories.page');
-Route::get('/products', ProductsPage::class)->name('products.page');
-Route::get('/cart', CartPage::class)->name('cart.page');
-Route::get('/products/{slug}', ProductDetailPage::class)->name('productdetail.page');
-
-Route::middleware('auth')->group(function (){
-	Route::get('/logout', function () {
-		auth()->logout();
-		return redirect('/');
-	});
-	Route::get('/checkout', CheckoutPage::class);
-	Route::get('/my-orders', MyOrdersPage::class);
-	Route::get('/My-orders/(order)', MyOrderDetailPage::class);
-	Route::get('/success', SuccessPage::class)->name('success');
-	Route::get('/cancel', CancelPage::class)->name('cancel');
+// Rute yang memerlukan autentikasi dan verifikasi
+Route::middleware(['auth', 'verified'])->group(function () {
+	Route::get('/home', UserPage::class)->name('user.page');
+    Route::get('/categories', CategoriesPage::class)->name('categories.page');
+    Route::get('/products', ProductsPage::class)->name('products.page');
+    Route::get('/cart', CartPage::class)->name('cart.page');
+    Route::get('/products/{slug}', ProductDetailPage::class)->name('productdetail.page');
+    Route::get('/checkout', CheckoutPage::class)->name('checkout.page');
+    Route::get('/my-orders', MyOrdersPage::class)->name('my-orders.page');
+    Route::get('/my-orders/{order}', MyOrderDetailPage::class)->name('my-orders-detail.page');
+    Route::get('/success', SuccessPage::class);
+    Route::get('/cancel', CancelPage::class);
 });
+

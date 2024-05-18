@@ -34,7 +34,7 @@
                     class="overflow-hidden overflow-y-auto max-h-[75vh] scrollbar-w-2 scrollbar-thumb-rounded-full scrollbar-track-bg-gray-100 scrollbar-thumb-bg-gray-300 dark:scrollbar-track-bg-slate-700 dark:scrollbar-thumb-bg-slate-500">
                     <div
                         class="flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-gray-200 md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
-                        <a class="{{ request()->is('/') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }}"
+                        <a class="{{ request()->is('/') || request()->is('home') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }}"
                             href="/" aria-current="page">Home</a>
 
                         <a class="{{ request()->is('categories*') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }}"
