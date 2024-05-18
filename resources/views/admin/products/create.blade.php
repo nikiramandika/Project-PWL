@@ -19,7 +19,8 @@
                 <div class="card mb-4 mx-4">
                     <div class="card-header pb-0">
                         <div class="d-flex flex-row justify-content-between">
-                            <a href="{{ url('products-management') }}" class="btn btn-secondary btn-sm mb-4" type="button">Back</a>
+                            <a href="{{ url('products-management') }}" class="btn btn-secondary btn-sm mb-4"
+                                type="button">Back</a>
                             <div>
                                 <h5 class="mb-0">Add Product</h5>
                             </div>
@@ -73,11 +74,12 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label for="price" class="form-label">Price</label>
-                                <input name="price" type="number" class="form-control" id="price"
-                                    aria-describedby="priceHelp" step="0.01" value="{{ old('price') }}">
-                                <div id="priceHelp" class="form-text">Enter the price of the product.</div>
+                            <div class="input-group mb-3">
+                                {{-- <label for="price" class="form-label">Price</label> --}}
+                                <span class="input-group-text">IDR</span>
+                                <input name="price" type="text" class="form-control rupiah" id="price"
+                                    style="padding-left: 5px;" aria-label="Amount (to the nearest rupiah) step="0.01"
+                                    value="{{ old('price') }}">
                                 @error('price')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror

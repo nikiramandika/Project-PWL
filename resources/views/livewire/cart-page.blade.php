@@ -15,13 +15,12 @@
                 </tr>
               </thead>
               <tbody>
-
                 @forelse ($cart_items as $item)
                 <tr wire:key='{{ $item['product_id'] }}'>
                   <td class="py-4">
                     <div class="flex items-center">
-                      <img class="h-16 w-16 mr-4" src="{{ url('storage', $item['image']) }}" alt="{{ $item['name'] }}">
-                    <span class="font-semibold">{{ $item['name'] }}</span>
+                      <img class="h-16 w-16 mr-4" src="{{ asset($item['image']) }}" alt="{{ $item['name'] }}">
+                      <span class="font-semibold">{{ $item['name'] }}</span>
                     </div>
                   </td>
                   <td class="py-4">

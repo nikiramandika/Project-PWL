@@ -26,6 +26,10 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        // Menghilangkan titik dari harga
+        $price = str_replace('.', '', $request->price);
+        $request->merge(['price' => $price]);
+
         // Validasi input
         $request->validate([
             'name' => 'required|string|max:255',
@@ -33,7 +37,7 @@ class ProductController extends Controller
             'category_id' => 'required|exists:categories,id',
             'brand_id' => 'required|exists:brands,id',
             'description' => 'nullable|string',
-            'price' => 'required|numeric|min:0',
+            'price' => 'required|min:0',
             'in_stock' => 'required|boolean',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
@@ -64,7 +68,6 @@ class ProductController extends Controller
         // Redirect dengan pesan sukses
         return redirect('/products-management')->with('successs', 'Data Berhasil Ditambahkan.');
     }
-
 
     public function edit($id)
     {
