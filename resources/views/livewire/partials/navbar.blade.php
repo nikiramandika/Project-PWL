@@ -52,7 +52,7 @@
                             </svg>
                             <span class="mr-1">Cart</span>
                             <span
-                                class="py-0.5 px-1.5 rounded-full text-xs font-medium bg-blue-50 border border-blue-200 text-blue-600">{{ $total_count }}</span>
+                                class="py-0.5 px-1.5 rounded-full text-xs font-medium bg-blue-50 border border-blue-200 text-blue-600">{{ is_array($total_count) ? '' : htmlspecialchars($total_count) }}</span>
                         </a>
                         @if (auth()->check())
                         @else

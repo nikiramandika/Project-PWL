@@ -138,7 +138,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/checkout', CheckoutPage::class)->name('checkout.page');
     Route::get('/my-orders', MyOrdersPage::class)->name('my-orders.page');
     Route::get('/my-orders/{order}', MyOrderDetailPage::class)->name('my-orders-detail.page');
-    Route::get('/success', SuccessPage::class);
+    Route::get('/success', SuccessPage::class)->name('success');
     Route::get('/cancel', CancelPage::class);
 });
 

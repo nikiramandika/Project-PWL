@@ -106,8 +106,8 @@
 							</label>
 						</li>
 						<li>
-							<input wire:model='payment_method' class="hidden peer" id="hosting-big" type="radio" value="stripe">
-							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700" for="hosting-big">
+							<input disabled wire:model='payment_method' class="hidden peer" id="hosting-big" type="radio" value="stripe">
+							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-not-allowed dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 " for="hosting-big">
 								<div class="block">
 									<div class="w-full text-lg font-semibold">
 										Stripe
@@ -177,15 +177,15 @@
 					<ul class="divide-y divide-gray-200 dark:divide-gray-700" role="list">
 						
 						@foreach ($cart_items as $ci)
-						<li class="py-3 sm:py-4" wire:key='{{ $ci['product_id'] }}'>
+						<li class="py-3 sm:py-4" wire:key='{{ $ci['product']->product_id }}'>
 							<div class="flex items-center">
 								<div class="flex-shrink-0">
-									<img alt="{{ $ci['name'] }}" class="w-12 h-12 rounded-full" src="{{ asset( $ci['image']) }}">
+									<img alt="{{ $ci['product']->name }}" class="w-12 h-12 rounded-full" src="{{ asset( $ci['product']->image) }}">
 									</img>
 								</div>
 								<div class="flex-1 min-w-0 ms-4">
 									<p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-										{{ $ci['name'] }}
+										{{ $ci['product']->name }}
 									</p>
 									<p class="text-sm text-gray-500 truncate dark:text-gray-400">
 										Quantity: {{ $ci['quantity'] }}
