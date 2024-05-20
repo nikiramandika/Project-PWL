@@ -69,7 +69,7 @@
                     <div class="flex items-center justify-between w-full">
                     <p class="text-base leading-4 text-gray-800 dark:text-gray-400">Shipping</p>
                     <p class="text-base leading-4 text-gray-600 dark:text-gray-400">
-                        {{ Number::currency(0, 'IDR') }}
+                        Free
                     </p>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                     </div>
                     </div>
                     <p class="text-lg font-semibold leading-6 text-gray-800 dark:text-gray-400">
-                        {{ Number::currency(0, 'IDR') }}
+                        Free
                     </p>
                 </div>
                 </div>

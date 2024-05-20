@@ -35,17 +35,20 @@ class OrderController extends Controller
         // Validasi request
         $request->validate([
             'status' => 'required|in:new,shipped,delivered,cancelled',
+            'payment_status' => 'required|in:pending,paid,failed',
         ]);
-
+    
         // Cari pesanan berdasarkan ID
         $order = Order::findOrFail($orderId);
-
-        // Perbarui status pesanan
+    
+        // Perbarui status pesanan dan status pembayaran
         $order->status = $request->status;
+        $order->payment_status = $request->payment_status;
         $order->save();
-
+    
         return redirect('/orders-management')->with('successs', 'Data Berhasil Diupdate.');
     }
+    
 
 
     public function create()

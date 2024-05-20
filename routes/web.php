@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\OrderController;
@@ -111,7 +112,10 @@ Route::group(['middleware' => ['auth', RedirectIfNotAdmin::class]], function () 
 		}
 	})->name('dashboard');
 
+	Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+
+
 Route::post('/login', [SessionsController::class, 'store'])->name('login');
 
 Route::post('/logout', [SessionsController::class, 'destroy'])->name('logout');

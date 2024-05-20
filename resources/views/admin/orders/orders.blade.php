@@ -103,7 +103,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $order->shipping_method }}</span>
+                                                    class="text-secondary text-xs font-weight-bold">JNE Reguler</span>
                                             </td>
                                             <td class="text-center">
                                                 <span

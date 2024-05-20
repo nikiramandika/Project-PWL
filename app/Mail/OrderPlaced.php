@@ -41,7 +41,7 @@ class OrderPlaced extends Mailable
         return new Content(
             markdown: 'mail.orders.placed',
             with: [
-                'url' => route('my-orders.show', $this->order)
+                'url' => route('my-orders.page', $this->order)
             ]
         );
     }
