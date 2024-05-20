@@ -102,7 +102,7 @@ class CheckoutPage extends Component
         CartManagement::clearCartItems();
 
         // Send email notification
-        // Mail::to(auth()->user())->send(new OrderPlaced($order));
+        Mail::to(auth()->user())->send(new OrderPlaced($order));
 
         // Redirect to success page
         return redirect()->route('success');
