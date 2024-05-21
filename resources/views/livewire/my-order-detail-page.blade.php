@@ -218,7 +218,7 @@
 
         </div>
         <div class="md:w-1/4">
-            <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4">
                 <h2 class="text-lg font-semibold mb-4">Summary</h2>
                 <div class="flex justify-between mb-2">
                     <span>Subtotal</span>
@@ -236,6 +236,18 @@
                 <div class="flex justify-between mb-2">
                     <span class="font-semibold">Grand Total</span>
                     <span class="font-semibold">{{ Number::currency($item->order->grand_total, 'IDR') }}</span>
+                </div>
+
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 ">
+                <h2 class="text-lg font-semibold mb-4">Invoice</h2>
+                <div class="flex justify-between mb-2">
+                    <a href="/my-orders/{{ $order->id }}/invoice"
+                        class="bg-blue-600 text-white py-2 mr-2 px-4 rounded-md hover:bg-blue-500">View
+                        Invoice</a>
+                    <a href="/my-orders/{{ $order->id }}/generate"
+                        class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-500">Download
+                        Invoice</a>
                 </div>
 
             </div>
