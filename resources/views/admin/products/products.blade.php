@@ -1,5 +1,6 @@
 @extends('layouts.user_type.auth')
 
+@section('title', 'Dashboard')
 @section('content')
 <div>
     <style>
