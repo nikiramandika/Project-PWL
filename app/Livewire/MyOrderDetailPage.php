@@ -8,6 +8,7 @@ use App\Models\OrderItem;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('My Order - Sm4rtbuy')]
 class MyOrderDetailPage extends Component
 {
 

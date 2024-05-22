@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Category;
 use Livewire\Component;
 
+#[Title('Categories - Sm4rtbuy')]
 class CategoriesPage extends Component
 {
     public function render()

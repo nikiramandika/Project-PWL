@@ -9,7 +9,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-#[Title('Product Detail - PPWL')]
+#[Title('Product Detail - Sm4rtbuy')]
 class ProductDetailPage extends Component
 {
     use LivewireAlert;

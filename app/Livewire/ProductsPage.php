@@ -14,7 +14,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 
 
-#[Title('Products - PPWL')]
+#[Title('Products - Sm4rtbuy')]
 class ProductsPage extends Component
 {
     use LivewireAlert;

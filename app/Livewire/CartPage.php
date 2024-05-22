@@ -7,7 +7,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
-#[Title('Cart - DCodeMania')]
+#[Title('Cart - Sm4rtbuy')]
 class CartPage extends Component
 {
 
