@@ -6,17 +6,14 @@
                     © <script>
                         document.write(new Date().getFullYear())
                     </script>, made with <i class="fa fa-heart"></i> by
-                    <a href="#" class="font-weight-bold" target="_blank">Tim 4 PPWL</a> &amp; <a style="color: #252f40;" href="#" class="font-weight-bold ml-1" target="_blank">Apa nama kelompoknya?</a>
+                    <a href="#" class="font-weight-bold" target="_blank">Sm4rtbuy</a> / <a style="color: #252f40;" href="#" class="font-weight-bold ml-1" target="_blank">Group 4</a>
                     for a better web.
                 </div>
             </div>
             <div class="col-lg-6">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-muted">Tim PPWL 4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-muted">Paten</a>
+                        <a href="#" class="nav-link text-muted">Sm4rtbuy</a>
                     </li>
                 </ul>
             </div>

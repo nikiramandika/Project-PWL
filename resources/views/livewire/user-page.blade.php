@@ -15,7 +15,7 @@
                     </h1>
                     <h1
                         class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-                        Selamat Berbelanja di <span class="text-blue-600">PPWL </span>
+                        Happy shopping at <span class="text-blue-600">Sm4rtbuy.</span>
                     </h1>
 
                     <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Purchase wide varities of electronics
@@ -24,17 +24,13 @@
                     <!-- Buttons -->
                     <div class="mt-7 grid gap-3 w-full sm:inline-flex">
                         <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="/register">
+                            href="/products">
                             Get started
                             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path d="m9 18 6-6-6-6" />
                             </svg>
-                        </a>
-                        <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="/contact">
-                            Contact sales team
                         </a>
                     </div>
                     <!-- End Buttons -->
@@ -215,7 +211,7 @@
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200"> Browse Popular<span class="text-blue-500">
+                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2" > Browse Popular<span class="text-blue-500">
                             Brands
                         </span> </h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
@@ -228,9 +224,7 @@
                     </div>
                 </div>
                 <p class="mb-12 text-base text-center text-gray-500">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-                    Pariatur
-                    numquam, odio quod nobis ipsum ex cupiditate?
+                    We offer a wide range of the most popular phone brands on the market. Find your dream phone with the latest features and the best prices. Whether you're looking for a phone for everyday use, professional photography, or gaming, we have the right choice for you.
                 </p>
             </div>
         </div>
@@ -263,7 +257,7 @@
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200"> Browse <span class="text-blue-500"> Categories
+                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2"> Browse <span class="text-blue-500"> Categories
                         </span> </h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                         <div class="flex-1 h-2 bg-blue-200">
@@ -275,9 +269,7 @@
                     </div>
                 </div>
                 <p class="mb-12 text-base text-center text-gray-500">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-                    Pariatur
-                    numquam, odio quod nobis ipsum ex cupiditate?
+                    Explore our wide range of phone categories. Whether you’re looking for the latest smartphones, budget-friendly options, or feature-rich models, we have something for everyone. Discover phones with advanced camera systems, powerful processors, and long-lasting batteries.
                 </p>
             </div>
         </div>
@@ -325,7 +317,7 @@
             <div class="max-w-xl mx-auto">
                 <div class="text-center ">
                     <div class="relative flex flex-col items-center">
-                        <h1 class="text-5xl font-bold dark:text-gray-200"> Customer <span class="text-blue-500">
+                        <h1 class="text-5xl font-bold dark:text-gray-200 pb-2"> Customer <span class="text-blue-500">
                                 Reviews
                             </span> </h1>
                         <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
@@ -338,9 +330,7 @@
                         </div>
                     </div>
                     <p class="mb-12 text-base text-center text-gray-500">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-                        Pariatur
-                        numquam, odio quod nobis ipsum ex cupiditate?
+                        Read what our customers have to say about our products. Our reviews highlight the experiences of real users who have purchased and used our phones. From outstanding performance to exceptional customer service, discover why our customers love shopping with us.
                     </p>
                 </div>
             </div>
@@ -360,12 +350,11 @@
                                 <p class="text-xs text-gray-500 dark:text-gray-400">Web Designer</p>
                             </div>
                         </div>
-                        <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
+                        <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, MAY , 2024
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-                        iure minus sed fugit obcaecati minima quam reiciendis dicta!
+                        I recently purchased a new phone from this site and overall, my experience was quite positive. The ordering process was smooth, and the delivery was on time. The phone itself works well, but I did encounter a minor issue with the battery life. Customer service was responsive and helped resolve the issue promptly.
                     </p>
                     <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
                         <div class="flex px-6 mb-2 md:mb-0">
@@ -421,7 +410,7 @@
                             </ul>
                             <h2 class="text-sm text-gray-500 dark:text-gray-400">Rating:<span
                                     class="font-semibold text-gray-600 dark:text-gray-300">
-                                    3.0</span>
+                                    4.0</span>
                             </h2>
                         </div>
                         <div
