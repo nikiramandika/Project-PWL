@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with(['category', 'brand'])->paginate(10);
+        $products = Product::with(['category', 'brand'])->get();
         return view('admin.products.products', compact('products'));
     }
 

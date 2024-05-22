@@ -48,97 +48,98 @@
                     </div>
                     <div class="card-body px-0 pt-0 pb-2 card-body-table">
                         <div class="table-responsive p-0">
-                            <table class="table align-items-center mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            User
-                                        </th>
-                                        <th
-                                            class=" text-uppercase  text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Grand total
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Payment Status
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Status
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Shipping Method
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Notes
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Action
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($orders as $order)
+                            <div class="card-body">
+                                <table id="myTable" class="table align-items-center mb-0">
+                                    <thead>
                                         <tr>
-                                            <td class="ps-4">
-                                                <a href="orders-management/{{ $order->id }}/view"
-                                                    class="text-xs font-weight-bold mb-0">{{ $order->user->name }}</a>
-                                            </td>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                User
+                                            </th>
+                                            <th
+                                                class=" text-uppercase  text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Grand total
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Payment Status
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Status
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Shipping Method
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Notes
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($orders as $order)
+                                            <tr>
+                                                <td class="ps-4">
+                                                    <a href="orders-management/{{ $order->id }}/view"
+                                                        class="text-xs font-weight-bold mb-0">{{ $order->user->name }}</a>
+                                                </td>
 
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{Number::currency ( $order->grand_total , 'IDR') }}</p>
-                                            </td>
-                                            {{-- <td>
+                                                <td class="text-center">
+                                                    <p class="text-xs font-weight-bold mb-0">
+                                                        {{ Number::currency($order->grand_total, 'IDR') }}</p>
+                                                </td>
+                                                {{-- <td>
                                         <div>
                                             <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
                                         </div>
                                     </td> --}}
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $order->payment_status }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $order->status }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">JNE Reguler</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $order->notes }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="/orders-management/{{ $order->id }}/view" class="mx-3"
-                                                    data-bs-toggle="tooltip" data-bs-original-title="View user">
-                                                    <i class="fas fa-eye text-secondary"></i>
-                                                </a>
-                                                <span>
-                                                    <form id="delete-form-{{ $order->id }}"
-                                                        action="/orders-management/{{ $order->id }}" method="POST"
-                                                        style="display: inline;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <a href="#" class="mx-3"
-                                                            onclick="deleteOrder({{ $order->id }})"
-                                                            data-bs-toggle="tooltip" data-bs-original-title="Delete">
-                                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                                        </a>
-                                                    </form>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                                <td class="text-center">
+                                                    <p class="text-xs font-weight-bold mb-0">{{ $order->payment_status }}
+                                                    </p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="text-xs font-weight-bold mb-0">{{ $order->status }}</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="text-secondary text-xs font-weight-bold">JNE Reguler</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span
+                                                        class="text-secondary text-xs font-weight-bold">{{ $order->notes }}</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="/orders-management/{{ $order->id }}/view" class="mx-3"
+                                                        data-bs-toggle="tooltip" data-bs-original-title="View user">
+                                                        <i class="fas fa-eye text-secondary"></i>
+                                                    </a>
+                                                    <span>
+                                                        <form id="delete-form-{{ $order->id }}"
+                                                            action="/orders-management/{{ $order->id }}" method="POST"
+                                                            style="display: inline;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <a href="#" class="mx-3"
+                                                                onclick="deleteOrder({{ $order->id }})"
+                                                                data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                                <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                            </a>
+                                                        </form>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center mt-4">
-                    {{ $orders->links('vendor.pagination.bootstrap-5') }}
-                </div>
+
             </div>
         </div>
     </div>

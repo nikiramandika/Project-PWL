@@ -51,101 +51,101 @@
                     </div>
                     <div class="card-body px-0 pt-0 pb-2 card-body-table">
                         <div class="table-responsive p-0">
-                            <table class="table align-items-center mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            ID
-                                        </th>
-                                        <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Photo
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Name
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Slug
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Is Active
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Created At
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Updated At
-                                        </th>
-                                        <th
-                                            class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Action
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($brands as $brand)
+                            <div class="card-body">
+                                <table id="myTable" class="table align-items-center mb-0">
+                                    <thead>
                                         <tr>
-                                            <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $brand->id }}</p>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <img src="{{ asset( $brand->image) }}" class="avatar avatar-sm me-3">
-                                                </div>
-                                            </td>
-                                            
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $brand->name }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $brand->slug }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $brand->is_active ? 'On' : 'Off' }}</p>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $brand->created_at }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $brand->updated_at }}</span>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="/brands-management/{{ $brand->id }}/edit" class="mx-3"
-                                                    data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                                    <i class="fas fa-user-edit text-secondary"></i>
-                                                </a>
-                                                <span>
-                                                    <form id="delete-form-{{ $brand->id }}"
-                                                        action="/brands-management/{{ $brand->id }}" method="POST"
-                                                        style="display: inline;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <a href="#" class="mx-3"
-                                                            onclick="deleteBrand({{ $brand->id }})"
-                                                            data-bs-toggle="tooltip" data-bs-original-title="Delete">
-                                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                                        </a>
-                                                    </form>
-                                                </span>
-
-                                            </td>
+                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                ID
+                                            </th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Photo
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Name
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Slug
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Is Active
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Created At
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Updated At
+                                            </th>
+                                            <th
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                Action
+                                            </th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($brands as $brand)
+                                            <tr>
+                                                <td class="ps-4">
+                                                    <p class="text-xs font-weight-bold mb-0">{{ $brand->id }}</p>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <img src="{{ asset($brand->image) }}"
+                                                            class="avatar avatar-sm me-3">
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center">
+                                                    <p class="text-xs font-weight-bold mb-0">{{ $brand->name }}</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="text-xs font-weight-bold mb-0">{{ $brand->slug }}</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="text-xs font-weight-bold mb-0">
+                                                        {{ $brand->is_active ? 'On' : 'Off' }}</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span
+                                                        class="text-secondary text-xs font-weight-bold">{{ $brand->created_at }}</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span
+                                                        class="text-secondary text-xs font-weight-bold">{{ $brand->updated_at }}</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="/brands-management/{{ $brand->id }}/edit" class="mx-3"
+                                                        data-bs-toggle="tooltip" data-bs-original-title="Edit user">
+                                                        <i class="fas fa-user-edit text-secondary"></i>
+                                                    </a>
+                                                    <span>
+                                                        <form id="delete-form-{{ $brand->id }}"
+                                                            action="/brands-management/{{ $brand->id }}" method="POST"
+                                                            style="display: inline;">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <a href="#" class="mx-3"
+                                                                onclick="deleteBrand({{ $brand->id }})"
+                                                                data-bs-toggle="tooltip" data-bs-original-title="Delete">
+                                                                <i class="cursor-pointer fas fa-trash text-secondary"></i>
+                                                            </a>
+                                                        </form>
+                                                    </span>
+
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="d-flex justify-content-center mt-4">
-                    {{ $brands->links('vendor.pagination.bootstrap-5') }}
                 </div>
             </div>
         </div>
