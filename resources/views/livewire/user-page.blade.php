@@ -347,7 +347,7 @@
                             <div>
                                 <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
                                     M. Niki Ramandika</h2>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">Web Designer</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
                         <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, MAY , 2024
@@ -448,13 +448,13 @@
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
                             <div class="flex mr-2 rounded-full">
-                                <img src="https://i.postimg.cc/q7pv50zT/pexels-edmond-dant-s-4342352.jpg"
+                                <img src="https://avatars.githubusercontent.com/u/146795640?s=100&v=4"
                                     alt="" class="object-cover w-12 h-12 rounded-full">
                             </div>
                             <div>
                                 <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                                    Sonira Roy</h2>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">Manager</p>
+                                    Jaysha Anbiya Harris</h2>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
                         <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
@@ -554,13 +554,13 @@
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
                             <div class="flex mr-2 rounded-full">
-                                <img src="https://i.postimg.cc/JzmrHQmk/pexels-pixabay-220453.jpg" alt=""
+                                <img src="https://avatars.githubusercontent.com/u/105465764?s=100&v=4" alt=""
                                     class="object-cover w-12 h-12 rounded-full">
                             </div>
                             <div>
                                 <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                                    William harry</h2>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">Marketing Officer</p>
+                                    Putera Nami Shiddieqy</h2>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
                         <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
@@ -660,13 +660,13 @@
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
                             <div class="flex mr-2 rounded-full">
-                                <img src="https://i.postimg.cc/4NMZPYdh/pexels-dinielle-de-veyra-4195342.jpg"
+                                <img src="https://avatars.githubusercontent.com/u/26892711?s=100&v=4"
                                     alt="" class="object-cover w-12 h-12 rounded-full">
                             </div>
                             <div>
                                 <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                                    James jack</h2>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">Java Programmer</p>
+                                    Nancy Nadine Natalioniva</h2>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
                         <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
@@ -766,13 +766,13 @@
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
                             <div class="flex mr-2 rounded-full">
-                                <img src="https://i.postimg.cc/4NMZPYdh/pexels-dinielle-de-veyra-4195342.jpg"
+                                <img src="https://avatars.githubusercontent.com/u/144049430?s=100&v=4"
                                     alt="" class="object-cover w-12 h-12 rounded-full">
                             </div>
                             <div>
                                 <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                                    James jack</h2>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">Java Programmer</p>
+                                    Zahra Naziha</h2>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
                         <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, SEP , 2022
