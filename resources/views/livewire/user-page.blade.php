@@ -341,7 +341,7 @@
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
                             <div class="flex mr-2 rounded-full">
-                                <img src="https://i.postimg.cc/rF6G0Dh9/pexels-emmy-e-2381069.jpg" alt=""
+                                <img src="https://avatars.githubusercontent.com/u/146726742?v=4" alt=""
                                     class="object-cover w-12 h-12 rounded-full">
                             </div>
                             <div>

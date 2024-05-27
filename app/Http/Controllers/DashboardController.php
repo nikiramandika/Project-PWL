@@ -27,7 +27,12 @@ class DashboardController extends Controller
         }
 
         $difference = $todaysMoney - $yesterdaysMoney;
-        $percentageIncrease = ($difference / $yesterdaysMoney) * 100;
+        if ($yesterdaysMoney != 0) {
+            $percentageIncrease = ($difference / $yesterdaysMoney) * 100;
+        } else {
+            $percentageIncrease = 0; // or any other default value you prefer
+        }
+        
 
         $totalSales = Order::sum('grand_total');
 

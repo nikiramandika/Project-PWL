@@ -95,7 +95,7 @@
             <span>Order Date : <strong>{{ $order->created_at->format('d-m-Y h:i A') }}</strong></span><br>
             <span>Payment Method : <strong>{{ $order->payment_method ?? 'N/A'}}</strong></span><br>
             <span>Address : <strong>{{ $address->street_address ?? 'N/A' }}, {{ $address->city ?? 'N/A' }},
-                    {{ $address->state ?? 'N/A' }}, Indonesia </strong></span><br>
+                    {{ $address->state ?? 'N/A' }} </strong></span><br>
             <span>Zip Code : <strong>{{ $address->zip_code ?? 'N/A' }}</strong></span><br>
         </div>
     </div>

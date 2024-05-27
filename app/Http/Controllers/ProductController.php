@@ -39,6 +39,9 @@ class ProductController extends Controller
             'description' => 'nullable|string',
             'price' => 'required|min:0',
             'in_stock' => 'required|boolean',
+            'is_active' => 'required|boolean',
+            'on_sale' => 'required|boolean',
+            'is_featured' => 'required|boolean',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
@@ -59,6 +62,9 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->in_stock = $request->in_stock;
+        $product->is_active = $request->is_active;
+        $product->is_featured = $request->is_featured;
+        $product->on_sale = $request->on_sale;
         $product->image = $imagePath;
         $product->save();
 
