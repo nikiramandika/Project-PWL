@@ -2,8 +2,8 @@
   <section class="py-10 bg-gray-50 font-poppins dark:bg-gray-800 rounded-lg">
     <div class="px-4 py-4 mx-auto max-w-7xl lg:py-6 md:px-6">
       <div class="flex flex-wrap mb-24 -mx-3">
-        <div class="w-full pr-2 lg:w-1/4 lg:block">
-          <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
+        <div class="w-full px-6 lg:w-1/4 lg:block">
+          <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900 rounded-lg">
             <h2 class="text-2xl font-bold dark:text-gray-400"> Categories</h2>
             <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
             <ul>
@@ -19,7 +19,7 @@
             </ul>
           </div>
 
-          <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+          <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900 rounded-lg">
             <h2 class="text-2xl font-bold dark:text-gray-400">Brand</h2>
             <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
             <ul>
@@ -34,7 +34,7 @@
             </ul>
           </div>
 
-          <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+          <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900 rounded-lg">
             <h2 class="text-2xl font-bold dark:text-gray-400">Product Status</h2>
             <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
             <ul>
@@ -56,10 +56,10 @@
           
         </div>
         <div class="w-full px-3 lg:w-3/4">
-          <div class="px-3 mb-4">
-            <div class="items-center justify-between hidden px-3 py-2 bg-gray-100 md:flex dark:bg-gray-900 ">
+          <div class="mb-4">
+            <div class="items-center justify-between hidden px-3 mb-6 md:flex dark:bg-gray-900  ">
               <div class="flex items-center justify-between">
-                <select wire:model.live="sort" class="block w-40 text-base bg-gray-100 cursor-pointer dark:text-gray-400 dark:bg-gray-900">
+                <select wire:model.live="sort" class="block w-40 text-base bg-gray-100 cursor-pointer dark:text-gray-400 dark:bg-gray-900 rounded-md">
                   <option value="latest">Sort by latest</option>
                   <option value="price">Sort by Price</option>
                 </select>
