@@ -12,6 +12,8 @@ use Livewire\Attributes\Url;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 
 #[Title('Products - Sm4rtbuy')]
@@ -34,6 +36,9 @@ class ProductsPage extends Component
 
     //add
     public function addToCart($product_id){
+        if (!Auth::check()) {
+            return Redirect::route('login');
+        }    
         $total_count = CartManagement::addItemToCart($product_id);  
         $this->dispatch('update-cart-count', total_count: $total_count)->to(Navbar::class); 
 

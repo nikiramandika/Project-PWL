@@ -5,8 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>{{ $title ?? 'Sm4rtbuy' }}</title>
+        
         @vite(['resources/css/app.css','resources/js/app.js'])
         @livewireStyles
+
+        <link rel="stylesheet" href="{{ asset('assets/css/n.css') }}">
     </head>
     <body class="bg-slate-200 dark:bg-slate-700">
         @livewire('partials.navbar')

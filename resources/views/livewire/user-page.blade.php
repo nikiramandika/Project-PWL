@@ -10,12 +10,11 @@
                     <h1
                         class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
                         Hi @if (auth()->check())
-                            {{ auth()->user()->name }}
-                        @endif
+                            {{ auth()->user()->name}}@endif!
                     </h1>
                     <h1
                         class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-                        Happy shopping at <span class="text-blue-600">Sm4rtbuy.</span>
+                        Happy shopping at <span class="text-blue-600">Sm4rtbuy.</span> <!--Smart Solutions for your everyday -->
                     </h1>
 
                     <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Purchase wide varities of electronics
@@ -141,7 +140,7 @@
                             </div>
 
                             <p class="mt-3 text-sm text-gray-800 dark:text-gray-200">
-                                <span class="font-bold">4.8</span> /5 - from 5k reviews
+                                <span class="font-bold">4.8</span> /5 - from 999k reviews
                             </p>
 
                             <div class="mt-5">
@@ -208,12 +207,10 @@
     {{-- Brand Start --}}
 
     <section class="py-20">
-        <div class="max-w-xl mx-auto">
+        <div class="mx-auto max-w-3xl">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2" > Browse Popular<span class="text-blue-500">
-                            Brands
-                        </span> </h1>
+                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2" >Browse Popular Brands</h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                         <div class="flex-1 h-2 bg-blue-200">
                         </div>
@@ -253,7 +250,7 @@
 
     {{-- Category Start --}}
 
-    <div class="bg-orange-200 py-20">
+    <div class="bg-orange-200 py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">

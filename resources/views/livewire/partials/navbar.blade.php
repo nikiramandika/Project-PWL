@@ -4,7 +4,7 @@
         <div class="relative md:flex md:items-center md:justify-between">
             <div class="flex items-center justify-between w-full">
                 <a class="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:ring-gray-600"
-                    href="/" aria-label="Brand">Sm4rtbuy</a>
+                    href="/" aria-label="Brand" id="judul">Sm4rtbuy</a>
                 <div class="md:hidden">
                     <button type="button"
                         class="hs-collapse-toggle flex justify-center items-center w-9 h-9 text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-gray-600"
@@ -34,16 +34,16 @@
                     class="overflow-hidden overflow-y-auto max-h-[75vh] scrollbar-w-2 scrollbar-thumb-rounded-full scrollbar-track-bg-gray-100 scrollbar-thumb-bg-gray-300 dark:scrollbar-track-bg-slate-700 dark:scrollbar-thumb-bg-slate-500">
                     <div
                         class="flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-gray-200 md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
-                        <a class="{{ request()->is('/') || request()->is('home') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }}"
+                        <a class="{{ request()->is('/') || request()->is('home') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }} navlist"
                             href="/" aria-current="page">Home</a>
 
-                        <a class="{{ request()->is('categories*') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }}"
+                        <a class="{{ request()->is('categories*') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }} navlist"
                             href="/categories">Categories</a>
 
-                        <a class="{{ request()->is('products*') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }}"
+                        <a class="{{ request()->is('products*') ? 'font-medium text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }} navlist"
                             href="/products">Products</a>
 
-                        <a class="{{ request()->is('cart*') ? 'font-medium flex items-center text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium flex items-center text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }}"
+                        <a class="{{ request()->is('cart*') ? 'font-medium flex items-center text-blue-600 py-3 md:py-6 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' : 'font-medium flex items-center text-gray-500 py-3 md:py-6 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-400 dark:hover:text-gray-500' }} navlist"
                             href="/cart">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 w-5 h-5 mr-1">
