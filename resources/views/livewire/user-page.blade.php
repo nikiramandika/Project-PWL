@@ -24,7 +24,7 @@
                     <div class="mt-7 grid gap-3 w-full sm:inline-flex">
                         <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             href="/products">
-                            Get started
+                            See our products
                             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -72,7 +72,7 @@
                             </div>
 
                             <p class="mt-3 text-sm text-gray-800 dark:text-gray-200">
-                                <span class="font-bold">4.6</span> /5 - from 12k reviews
+                                <span class="font-bold">4.99</span> /5 - from 999k reviews
                             </p>
 
                             <div class="mt-5">
@@ -206,11 +206,11 @@
 
     {{-- Brand Start --}}
 
-    <section class="py-20">
-        <div class="mx-auto max-w-3xl">
-            <div class="text-center ">
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl ">
+            <div class="text-center px-4 sm:px-6 lg:px-8">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2" >Browse Popular Brands</h1>
+                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2" >Popular Brands</h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                         <div class="flex-1 h-2 bg-blue-200">
                         </div>
@@ -225,7 +225,7 @@
                 </p>
             </div>
         </div>
-        <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-0">
+        <div class="justify-center max-w-6xl px-4 sm:px-6 lg:px-8 py-4 mx-auto lg:py-0">
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-2">
 
                 @foreach ($brands as $brand)
@@ -254,7 +254,7 @@
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2"> Browse <span class="text-blue-500"> Categories
+                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2"><span class="text-blue-500"> Categories
                         </span> </h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                         <div class="flex-1 h-2 bg-blue-200">
@@ -332,7 +332,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 ">
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 sm:px-6">
                 <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
                     <div
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
@@ -662,7 +662,7 @@
                             </div>
                             <div>
                                 <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-300">
-                                    Nancy Nadine Natalioniva</h2>
+                                    Nancy Nadine</h2>
                                 <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
