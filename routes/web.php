@@ -136,12 +136,13 @@ Route::get('/welcome', function () {
 Route::get('/', UserPage::class)->name('user.page');
 Route::get('/categories', CategoriesPage::class)->name('categories.page');
 Route::get('/products', ProductsPage::class)->name('products.page');
-Route::get('/cart', CartPage::class)->name('cart.page');
+
 Route::get('/products/{slug}', ProductDetailPage::class)->name('productdetail.page');
 // Rute yang memerlukan autentikasi dan verifikasi
 Route::middleware(['auth', 'verified'])->group(function () {
 	Route::get('/home', UserPage::class)->name('user.page');
     Route::get('/checkout', CheckoutPage::class)->name('checkout.page');
+	Route::get('/cart', CartPage::class)->name('cart.page');
     Route::get('/my-orders', MyOrdersPage::class)->name('my-orders.page');
     Route::get('/my-orders/{order_id}', MyOrderDetailPage::class)->name('my-orders-detail.page');
 	Route::get('/my-orders/{order_id}/invoice', [InvoiceController::class, 'show']);

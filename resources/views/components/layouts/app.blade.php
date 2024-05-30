@@ -11,7 +11,7 @@
 
         <link rel="stylesheet" href="{{ asset('assets/css/n.css') }}">
     </head>
-    <body class="bg-slate-200 dark:bg-slate-700">
+    <body class="bg-slate-800 dark:bg-slate-700">
         @livewire('partials.navbar')
         <main>
             {{ $slot }}

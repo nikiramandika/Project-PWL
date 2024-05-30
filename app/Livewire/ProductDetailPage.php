@@ -8,6 +8,8 @@ use App\Models\Product;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 #[Title('Product Detail - Sm4rtbuy')]
 class ProductDetailPage extends Component
@@ -31,6 +33,9 @@ class ProductDetailPage extends Component
     }
 
     public function addToCart($product_id){
+        if (!Auth::check()) {
+            return Redirect::route('login');
+        }
         $total_count = CartManagement::addItemToCartWithQty($product_id, $this->quantity);  
         $this->dispatch('update-cart-count', total_count: $total_count)->to(Navbar::class); 
 

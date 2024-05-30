@@ -7,3 +7,25 @@
 body {
     font-family: "Montserrat";
 }
+
+.backgroundimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url("/assets/img/bgs.jpg");
+    background-position: center center;
+}
+
+.bgdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+    justify-content: space-evenly;
+}
+
+
+.bawahdrop {
+    backdrop-filter: blur(10px);
+}
+
+.placeholdcen::placeholder {
+    text-align: center!important;
+    align-items: center;
+}
