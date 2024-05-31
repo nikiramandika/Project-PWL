@@ -34,6 +34,7 @@
                   {!! Str::markdown($product->description) !!}
                 </p>
               </div>
+              
               <div class="w-32 mb-8 ">
                 <label for="" class="w-full pb-1 text-md font-semibold text-gray-700 dark:border-gray-600 dark:text-gray-400">Quantity</label>
                 <div class="relative flex flex-row w-full h-10 mt-6 bg-transparent rounded-lg">

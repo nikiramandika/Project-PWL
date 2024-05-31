@@ -51,7 +51,7 @@
 
     {{-- Brand Start --}}
 
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100">
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="mx-auto max-w-3xl ">
             <div class="text-center px-4 sm:px-6 lg:px-8">
                 <div class="relative flex flex-col items-center">
@@ -95,7 +95,7 @@
 
     {{-- Category Start --}}
 
-    <div class="bg-gray-200 py-20 px-4 sm:px-6 lg:px-8">
+    <div class="bg-gray-100 py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
@@ -154,7 +154,7 @@
 
     {{-- Review Start --}}
 
-    <section class="py-14 font-poppins dark:bg-gray-800 bg-gray-100 px-4 sm:px-6 lg:px-8">
+    <section class="py-14 font-poppins dark:bg-gray-800 bg-white px-4 sm:px-6 lg:px-8">
         <div class="py-6 mx-auto lg:py-4 md:px-6 px-4 sm:px-6 lg:px-8">
             <div class="max-w-xl mx-auto ">
                 <div class="text-center ">
