@@ -70,14 +70,14 @@
                 </p>
             </div>
         </div>
-        <div class="justify-center max-w-6xl px-4 sm:px-6 lg:px-8 py-4 mx-auto lg:py-0">
+        <div class="justify-center px-4 sm:px-6 lg:px-8 py-4 mx-auto lg:py-0 max-w-2xl">
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 md:grid-cols-2">
 
                 @foreach ($brands as $brand)
                     <div class="rounded-3xl shadow-md dark:bg-gray-800 overflow-hidden" wire:key="{{ $brand->id }}">
                         <a href="products?selected_brands[0]={{ $brand->id }}" class="">
                             <img src="{{ asset($brand->image) }}" alt=""
-                                class="object-cover w-full h-64 rounded-t-3xl hover:brightness-75 imgblur">
+                                class="object-cover w-full rounded-t-3xl hover:brightness-75 imgblur aspect-square">
                         </a>
                         <div class="p-5 text-center bawahdrop rounded-b-3xl z-50">
                             <a href=""
