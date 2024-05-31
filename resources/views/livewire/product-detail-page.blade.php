@@ -1,15 +1,15 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white">
-    <section class="overflow-hidden bg-white dark:bg-gray-800">
+    <section class="overflow-hidden bg-white dark:bg-gray-800 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
 
-        <div class="flex flex-wrap -mx-4">
+        <div class="w-full flex flex-wrap -mx-4">
 
           <div class="w-full mb-8 md:w-2/5 md:mb-0" x-data="{ mainImage: '{{ asset($product->image) }}' }">
             <div class="top-0 z-50 overflow-hidden ">
               <div class="relative mb-6 lg:mb-10 lg:h-2/4 ">
                 <img x-bind:src="mainImage" alt="" class="object-cover w-full lg:h-full rounded-xl">
               </div>
-              <div class="px-6 pb-6 mt-6 border-t border-gray-300 dark:border-gray-400 ">
+              <div class="pb-6 mt-6 border-t border-gray-300 dark:border-gray-400 ">
                 <div class="flex flex-wrap items-center mt-6">
                   <span class="mr-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-4 h-4 text-gray-700 dark:text-gray-400 bi bi-truck" viewBox="0 0 16 16">
@@ -37,17 +37,19 @@
               
               <div class="w-32 mb-8 ">
                 <label for="" class="w-full pb-1 text-md font-semibold text-gray-700 dark:border-gray-600 dark:text-gray-400">Quantity</label>
-                <div class="relative flex flex-row w-full h-10 mt-6 bg-transparent rounded-lg">
-                  <button wire:click='decreaseQty' class="px-3 w-20 h-full text-gray-600 bg-gray-300 rounded-l-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-400">
+                <div class="relative flex flex-row w-full h-10 mt-3 bg-transparent rounded-lg">
+                  <button wire:click='decreaseQty' class="px-3 w-20 h-full text-gray-600 bg-gray-200 rounded-l-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">
                     <span class="m-auto text-2xl font-thin">-</span>
                   </button>
-                  <input type="number" /*wire:model='quantity'*/ readonly class="flex items-center w-full text-center text-gray-700 placeholder-gray-700 bg-gray-300 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black border-none placeholdcen p-0 pl-3" placeholder="{!!$quantity!!}"></input>
-                  <button wire:click='increaseQty' class="px-3 w-20 h-full text-gray-600 bg-gray-300 rounded-r-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 dark:bg-gray-900 hover:text-gray-700 hover:bg-gray-400">
+                  <input type="number" /*wire:model='quantity'*/ readonly class="flex items-center w-full text-center text-gray-700 placeholder-gray-700 bg-gray-200 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black border-none placeholdcen p-0 pl-3 focus:ring-0" placeholder="{!!$quantity!!}"></input>
+                  <button wire:click='increaseQty' class="px-3 w-20 h-full text-gray-600 bg-gray-200 rounded-r-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 dark:bg-gray-900 hover:text-gray-700 hover:bg-gray-300">
                     <span class="m-auto text-2xl font-thin">+</span>
                   </button>
+                  
                 </div>
               </div>
-              <div class="flex flex-wrap items-center gap-4">
+              {{-- <span>{{Number::currency($product->price*$quantity , 'IDR') }}</span> --}}
+              <div class="flex flex-wrap items-center">
                 <button wire:click='addToCart({{$product->id}})' class="w-full px-4 py-2 bg-blue-500 rounded-full lg:w-2/5 dark:text-gray-200 text-gray-50 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-700">
                   <span wire:loading.remove wire:target='addToCart({{$product->id}})'>Add to cart</span><span wire:loading wire:target='addToCart({{$product->id}})'>loading..</span></button>
               </div>
