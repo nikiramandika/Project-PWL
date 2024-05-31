@@ -7,17 +7,17 @@
                     href="/" aria-label="Brand" id="judul">Sm4rtbuy</a>
                 <div class="md:hidden">
                     <button type="button"
-                        class="hs-collapse-toggle flex justify-center items-center w-9 h-9 text-sm font-semibold rounded-lg border border-gray-200 text-grajy-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-gray-600"
+                        class=" bg-transparent hs-collapse-toggle flex justify-center items-center w-9 h-9 text-sm font-semibold rounded-lg border border-gray-200 text-grajy-800disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-gray-600"
                         data-hs-collapse="#navbar-collapse-with-animation"
                         aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
-                        <svg class="hs-collapse-open:hidden flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                        <svg class="text-white  hs-collapse-open:hidden flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="3" x2="21" y1="6" y2="6" />
                             <line x1="3" x2="21" y1="12" y2="12" />
                             <line x1="3" x2="21" y1="18" y2="18" />
                         </svg>
-                        <svg class="hs-collapse-open:block hidden flex-shrink-0 w-4 h-4"
+                        <svg class="hs-collapse-open:block hidden flex-shrink-0 w-4 h-4 text-white"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
@@ -75,7 +75,7 @@
                             <div
                                 class="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:hover] md:py-3">
                                 <button type="button"
-                                    class="flex items-center w-full text-gray-300 hover:text-gray-200 font-medium dark:text-gray-400 dark:hover:text-gray-500">
+                                    class="flex items-center w-full text-gray-300 hover:text-gray-200 font-medium dark:text-gray-400 dark:hover:text-gray-500 mt-2 md:mt-0 lg:mt-0">
                                     {{ auth()->user()->name }}
                                     <svg class="ms-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"

@@ -1,4 +1,4 @@
-<div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+<div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white">
 	<h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">
 		Checkout
 	</h1>
@@ -6,10 +6,10 @@
 		<div class="grid grid-cols-12 gap-4">
 			<div class="md:col-span-12 lg:col-span-8 col-span-12">
 				<!-- Card -->
-				<div class="bg-white rounded-xl shadow p-4 sm:p-7 dark:bg-slate-900">
+				<div class="bg-white rounded-3xl shadow p-4 sm:p-7 dark:bg-slate-900">
 					<!-- Shipping Address -->
 					<div class="mb-6">
-						<h2 class="text-xl font-bold underline text-gray-700 dark:text-white mb-2">
+						<h2 class="text-xl font-bold text-gray-700 dark:text-white mb-2">
 							Shipping Address
 						</h2>
 						<div class="grid grid-cols-2 gap-4">
@@ -93,7 +93,7 @@
 					<ul class="grid w-full gap-6 md:grid-cols-2">
 						<li>
 							<input wire:model='payment_method' class="hidden peer" id="hosting-small" required="" type="radio" value="cod" />
-							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700" for="hosting-small">
+							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-2xl cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700" for="hosting-small">
 								<div class="block">
 									<div class="w-full text-lg font-semibold">
 										Cash on Delivery
@@ -107,7 +107,7 @@
 						</li>
 						<li>
 							<input disabled wire:model='payment_method' class="hidden peer" id="hosting-big" type="radio" value="stripe">
-							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-not-allowed dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 " for="hosting-big">
+							<label class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-2xl cursor-not-allowed dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 " for="hosting-big">
 								<div class="block">
 									<div class="w-full text-lg font-semibold">
 										Credit Card
@@ -128,11 +128,11 @@
 				<!-- End Card -->
 			</div>
 			<div class="md:col-span-12 lg:col-span-4 col-span-12">
-				<div class="bg-white rounded-xl shadow p-4 sm:p-7 dark:bg-slate-900">
-					<div class="text-xl font-bold underline text-gray-700 dark:text-white mb-2">
-						ORDER SUMMARY
+				<div class="bg-white rounded-3xl shadow p-4 sm:p-7 dark:bg-slate-900">
+					<div class="text-xl font-bold text-gray-700 dark:text-white mb-2">
+						Order Summary
 					</div>
-					<div class="flex justify-between mb-2 font-bold">
+					<div class="flex justify-between mb-2">
 						<span>
 							Subtotal
 						</span>
@@ -140,7 +140,7 @@
 							{{ Number::currency($grand_total, 'IDR') }}
 						</span>
 					</div>
-					<div class="flex justify-between mb-2 font-bold">
+					<div class="flex justify-between mb-2">
 						<span>
 							Taxes
 						</span>
@@ -148,7 +148,7 @@
 							{{ Number::currency(0, 'IDR') }}
 						</span>
 					</div>
-					<div class="flex justify-between mb-2 font-bold">
+					<div class="flex justify-between mb-2">
 						<span>
 							Shipping Cost
 						</span>
@@ -167,13 +167,13 @@
 					</div>
 					</hr>
 				</div>
-				<button type="submit" class="bg-green-500 mt-4 w-full p-3 rounded-lg text-lg text-white hover:bg-green-600">
+				<button type="submit" class="bg-green-500 mt-4 w-full p-3 rounded-full text-lg text-white hover:bg-green-600">
 					<span wire:loading.remove>Placed Order</span>
 					<span wire:loading>Processing...</span>
 				</button>
-				<div class="bg-white mt-4 rounded-xl shadow p-4 sm:p-7 dark:bg-slate-900">
-					<div class="text-xl font-bold underline text-gray-700 dark:text-white mb-2">
-						BASKET SUMMARY
+				<div class="bg-white mt-4 rounded-3xl shadow p-4 sm:p-7 dark:bg-slate-900">
+					<div class="text-xl font-bold text-gray-700 dark:text-white mb-2">
+						Basket Summary
 					</div>
 					<ul class="divide-y divide-gray-200 dark:divide-gray-700" role="list">
 						
