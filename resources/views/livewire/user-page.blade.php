@@ -124,7 +124,7 @@
                         <div class="p-4 md:p-5">
                             <div class="flex justify-between items-center">
                                 <div class="flex items-center">
-                                    <img class="h-[2.375rem] w-[2.375rem] rounded-full"
+                                    <img class="h-[2.375rem] w-[2.375rem] rounded-xl"
                                         src="{{ asset($category->image) }}" alt="Image Description">
                                     <div class="ms-3">
                                         <h3
@@ -302,7 +302,7 @@
                 <!-- End Review -->
             </div> --}}
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-                <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="py-6 bg-white rounded-3xl shadow dark:bg-gray-900">
                     <div
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
@@ -421,7 +421,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="py-6 bg-white rounded-3xl shadow dark:bg-gray-900">
                     <div
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
@@ -538,7 +538,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="py-6 bg-white rounded-3xl shadow dark:bg-gray-900">
                     <div
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
@@ -656,7 +656,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="py-6 bg-white rounded-3xl shadow dark:bg-gray-900">
                     <div
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
@@ -774,7 +774,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+                <div class="py-6 bg-white rounded-3xl shadow dark:bg-gray-900">
                     <div
                         class="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
                         <div class="flex items-center px-6 mb-2 md:mb-0 ">
