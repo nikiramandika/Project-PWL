@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-	return view('welcome');
+	return view('user.page');
 });
 
 Route::get('/home', function () {
@@ -118,21 +118,9 @@ Route::group(['middleware' => ['auth', RedirectIfNotAdmin::class]], function () 
 });
 
 
-Route::post('/login', [SessionsController::class, 'store'])->name('login');
-
-Route::post('/logout', [SessionsController::class, 'destroy'])->name('logout');
-
-Route::get('/login', function () {
-	return view('session/login-session');
-})->name('login');
-
-Route::get('/welcome', function () {
-	return view('welcome');
-})->name('welcome');
-
 // Frontend routes
-// Rute yang dapat diakses tanpa login
 
+// Rute yang dapat diakses tanpa login
 Route::get('/', UserPage::class)->name('user.page');
 Route::get('/categories', CategoriesPage::class)->name('categories.page');
 Route::get('/products', ProductsPage::class)->name('products.page');
@@ -151,3 +139,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/cancel', CancelPage::class);
 });
 
+
+
+// Route::post('/login', [SessionsController::class, 'store'])->name('login');
+
+// Route::post('/logout', [SessionsController::class, 'destroy'])->name('logout');
+
+// Route::get('/login', function () {
+// 	return view('session/login-session');
+// })->name('login');

@@ -1,5 +1,6 @@
 @extends('layouts.user_type.guest')
 
+@section('title', 'Login')
 @section('content')
     <main class="main-content  mt-0">
         <section>
@@ -11,25 +12,67 @@
                                 <div class="card-header pb-0 text-left bg-transparent">
                                     <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
                                     <p class="mb-0">Create a new acount<br></p>
-                                    <p class="mb-0">Pake akun admin kalo mo masok</p>
-                                    <p class="mb-0">Email <b>admin@admin.com</b></p>
-                                    <p class="mb-0">Password <b>admin</b></p>
+                                    <p class="mb-0">We're delighted to have you back!</p>
+                                    <p class="mb-0">Please log in or sign up to access your account.</p>
                                 </div>
                                 <div class="card-body">
+                                    <style>
+                                        .alert {
+                                            transition: opacity 0.5s ease;
+                                        }
+                                    </style>
                                     @if (session('success'))
-                                        <div id="flash-message" class="alert alert-success" role="alert">
+                                        <div id="success-alert"
+                                            class="alert alert-success mt-2 bg-teal-500 text-sm text-white rounded-lg p-4"
+                                            role="alert">
                                             {{ session('success') }}
                                         </div>
+
                                         <script>
+                                            // Ambil elemen alert
+                                            var alert = document.getElementById('success-alert');
+
+                                            // Set opacity menjadi 0
+                                            alert.style.opacity = '0';
+
+                                            // Hapus elemen alert setelah 4 detik
                                             setTimeout(function() {
-                                                var flashMessage = document.getElementById('flash-message');
-                                                if (flashMessage) {
-                                                    flashMessage.style.display = 'none';
-                                                }
-                                            }, 4000); // Hide the flash message after 4 seconds
+                                                alert.style.opacity = '1'; // Ubah opacity menjadi 1
+                                                setTimeout(function() {
+                                                    alert.style.opacity = '0'; // Kembali ubah opacity menjadi 0
+                                                    setTimeout(function() {
+                                                        alert.remove(); // Hapus elemen alert
+                                                    }, 500); // Waktu transisi (500ms = 0.5 detik)
+                                                }, 4000); // Waktu alert ditampilkan (4000ms = 4 detik)
+                                            }, 100); // Tunda sebentar sebelum memulai transisi (100ms = 0.1 detik)
                                         </script>
                                     @endif
-                                    <form role="form" method="POST" action="/auth">
+                                    @if ($errors->any())
+                                        <div id="error-alert"
+                                            class="alert alert-danger mt-2 bg-red-500 text-sm text-white rounded-lg p-4"
+                                            role="alert">
+                                                @foreach ($errors->all() as $error)
+                                                    {{ $error }}
+                                                @endforeach
+                                        </div>
+
+                                        <script>
+                                            var errorAlert = document.getElementById('error-alert');
+
+                                            errorAlert.style.opacity = '0';
+
+                                            setTimeout(function() {
+                                                errorAlert.style.opacity = '1';
+                                                setTimeout(function() {
+                                                    errorAlert.style.opacity = '0';
+                                                    setTimeout(function() {
+                                                        errorAlert.remove();
+                                                    }, 500);
+                                                }, 4000);
+                                            }, 100);
+                                        </script>
+                                    @endif
+                                    <form role="form" method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <label>Email</label>
                                         <div class="mb-3">
@@ -60,8 +103,7 @@
                                 </div>
                                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                                     <small class="text-muted">Forgot you password? Reset you password
-                                        <a href="forgot-password"
-                                            class="text-info text-gradient font-weight-bold">here</a>
+                                        <a href="/forgot-password" class="text-info text-gradient font-weight-bold">here</a>
                                     </small>
                                     <p class="mb-4 text-sm mx-auto">
                                         Don't have an account?

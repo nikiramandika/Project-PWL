@@ -93,7 +93,7 @@
         <div>
             <span>Order Id : <strong>{{ $order->id }}</strong></span><br>
             <span>Order Date : <strong>{{ $order->created_at->format('d-m-Y h:i A') }}</strong></span><br>
-            <span>Payment Method : <strong>{{ $order->payment_method ?? 'N/A'}}</strong></span><br>
+            <span>Payment Method : <strong>{{ $order->payment_method == 'cod' ? 'Cash on Delivery' : 'N/A'}}</strong></span><br>
             <span>Address : <strong>{{ $address->street_address ?? 'N/A' }}, {{ $address->city ?? 'N/A' }},
                     {{ $address->state ?? 'N/A' }} </strong></span><br>
             <span>Zip Code : <strong>{{ $address->zip_code ?? 'N/A' }}</strong></span><br>

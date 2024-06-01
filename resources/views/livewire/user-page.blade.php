@@ -70,8 +70,8 @@
                 </p>
             </div>
         </div>
-        <div class="justify-center px-4 sm:px-6 lg:px-8 py-4 mx-auto lg:py-0 max-w-2xl">
-            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2 md:grid-cols-2">
+        <div class="justify-center px-4 sm:px-6 lg:px-8 py-4 mx-auto lg:py-0 max-w-6xl">
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-2">
 
                 @foreach ($brands as $brand)
                     <div class="rounded-3xl shadow-md dark:bg-gray-800 overflow-hidden" wire:key="{{ $brand->id }}">
