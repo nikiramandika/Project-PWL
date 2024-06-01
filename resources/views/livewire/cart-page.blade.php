@@ -1,5 +1,5 @@
-<div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white">
-    <div class="px-4 sm:px-6 lg:px-8 w-full">
+<div class="w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white">
+    <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
       <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
       <div class="flex flex-col lg:flex-row gap-4 w-full">
         <div class="lg:w-3/4">
