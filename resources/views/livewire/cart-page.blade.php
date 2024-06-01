@@ -28,8 +28,8 @@
                   </td>
                   <td class="py-4">
                     <div class="flex justify-start">
-                      <button wire:click='decreaseQty({{ $item['product_id'] }})' class="py-1 w-10 h-full text-gray-600 bg-gray-200 rounded-l-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">-</button>
-                      <span class="text-md font-thin bg-gray-200 py-1 w-8 text-center">{{ $item['quantity'] }}</span>
+                      <button wire:click='decreaseQty({{ $item['product_id'] }})' class="py-1 w-10 h-full text-gray-800 bg-gray-200 rounded-l-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">-</button>
+                      <span class="text-md bg-gray-200 py-1 w-8 text-center text-gray-600">{{ $item['quantity'] }}</span>
                       <button wire:click='increaseQty({{ $item['product_id'] }})' class="py-1 w-10 h-full text-gray-600 bg-gray-200 rounded-r-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">+</button>
                     </div>
                     
@@ -38,7 +38,7 @@
                     {{ Number::currency($item['total_amount'], 'IDR') }}
                   </td>
                   <td>
-                    <button wire:click='removeItem({{ $item['product_id'] }})' class=" bg-red-400 rounded-full px-4 py-1 hover:bg-red-500 hover:text-white hover:border-red-700"><span wire:loading.remove wire:target='removeItem({{ $item['product_id'] }})'>Remove</span><span wire:loading wire:target='removeItem({{ $item['product_id'] }})'>Removing...</span></button>
+                    <button wire:click='removeItem({{ $item['product_id'] }})' class=" bg-red-400 rounded-full px-4 py-1 hover:bg-red-500 hover:text-white hover:border-red-700 text-white"><span wire:loading.remove wire:target='removeItem({{ $item['product_id'] }})'>Remove</span><span wire:loading wire:target='removeItem({{ $item['product_id'] }})'>Removing...</span></button>
                   </td>
                 </tr>                    
                 @empty
@@ -73,7 +73,7 @@
               <span class="font-semibold">{{ Number::currency ($grand_total, 'IDR') }}</span>
             </div>
             @if ($cart_items)
-              <a href="/checkout" class="bg-blue-500 block text-center text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</a>  
+              <a href="/checkout" class="bg-blue-500 block text-center text-white py-2 px-4 rounded-lg mt-4 w-full hover:bg-green-500">Checkout</a>  
             @endif
           </div>
         </div>

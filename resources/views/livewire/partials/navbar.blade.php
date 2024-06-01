@@ -45,11 +45,9 @@
 
                         <a class="{{ request()->is('cart*') ? 'font-medium flex items-center text-blue-400 py-3 md:py-3 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-200 dark:hover:text-gray-500' : 'font-medium flex items-center text-gray-300 py-3 md:py-3 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-200 dark:hover:text-gray-500' }} navlist"
                             href="/cart">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 w-5 h-5 mr-1">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="flex-shrink-0 w-5 h-5 mr-1.5" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+                              </svg>
                             <span class="mr-2">Cart</span>
                             <span
                                 class="px-1 rounded-full text-xs font-medium bg-slate-300 border border-blue-200 text-blue-600 text-center">{{ is_array($total_count) ? '' : htmlspecialchars($total_count) }}</span>
