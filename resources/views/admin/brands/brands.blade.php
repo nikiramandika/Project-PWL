@@ -113,11 +113,11 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <span
-                                                        class="text-secondary text-xs font-weight-bold">{{ $brand->created_at }}</span>
+                                                        class="text-secondary text-xs font-weight-bold">{{ $brand->created_at->diffForHumans()  }}</span>
                                                 </td>
                                                 <td class="text-center">
                                                     <span
-                                                        class="text-secondary text-xs font-weight-bold">{{ $brand->updated_at }}</span>
+                                                        class="text-secondary text-xs font-weight-bold">{{ $brand->updated_at->diffForHumans()  }}</span>
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="/brands-management/{{ $brand->id }}/edit" class="mx-3"

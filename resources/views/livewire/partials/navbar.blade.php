@@ -10,9 +10,10 @@
                         class=" bg-transparent hs-collapse-toggle flex justify-center items-center w-9 h-9 text-sm font-semibold rounded-lg border border-gray-200 text-grajy-800disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-gray-600"
                         data-hs-collapse="#navbar-collapse-with-animation"
                         aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
-                        <svg class="text-white  hs-collapse-open:hidden flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="text-white  hs-collapse-open:hidden flex-shrink-0 w-4 h-4"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <line x1="3" x2="21" y1="6" y2="6" />
                             <line x1="3" x2="21" y1="12" y2="12" />
                             <line x1="3" x2="21" y1="18" y2="18" />
@@ -45,9 +46,12 @@
 
                         <a class="{{ request()->is('cart*') ? 'font-medium flex items-center text-blue-400 py-3 md:py-3 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-200 dark:hover:text-gray-500' : 'font-medium flex items-center text-gray-300 py-3 md:py-3 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-200 dark:hover:text-gray-500' }} navlist"
                             href="/cart">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="flex-shrink-0 w-5 h-5 mr-1.5" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
-                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="flex-shrink-0 w-5 h-5 mr-1.5" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+                                </path>
+                            </svg>
                             <span class="mr-2">Cart</span>
                             <span
                                 class="px-1 rounded-full text-xs font-medium bg-slate-300 border border-blue-200 text-blue-600 text-center">{{ is_array($total_count) ? '' : htmlspecialchars($total_count) }}</span>
@@ -84,11 +88,14 @@
 
                                 <div
                                     class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-48 hidden z-10 bg-white md:shadow-md rounded-lg p-2 dark:bg-gray-800 md:dark:border dark:border-gray-700 dark:divide-gray-700 before:absolute top-full md:border before:-top-5 before:start-0 before:w-full before:h-5">
+                                    <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                        href="/profile">
+                                        Profile
+                                    </a>
                                     <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                         wire:navigate href="/my-orders">
                                         My Orders
                                     </a>
-
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
                                         <button type="submit"
@@ -97,6 +104,7 @@
                                         </button>
                                     </form>
                                 </div>
+
                             </div>
                         @endauth
 

@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use App\Models\Category;
 use Livewire\Component;
+use Livewire\Attributes\Title;
+
 
 #[Title('Categories - Sm4rtbuy')]
 class CategoriesPage extends Component

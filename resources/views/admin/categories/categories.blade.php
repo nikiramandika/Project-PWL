@@ -111,11 +111,11 @@
                                             </td>
                                             <td class="text-center">
                                                 <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $category->created_at }}</span>
+                                                    class="text-secondary text-xs font-weight-bold">{{ $category->created_at->diffForHumans()  }}</span>
                                             </td>
                                             <td class="text-center">
                                                 <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $category->updated_at }}</span>
+                                                    class="text-secondary text-xs font-weight-bold">{{ $category->updated_at->diffForHumans()  }}</span>
                                             </td>
                                             <td class="text-center">
                                                 <a href="/categories-management/{{ $category->id }}/edit" class="mx-3"

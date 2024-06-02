@@ -98,11 +98,11 @@
                                             </td>
                                             <td class="text-center">
                                                 <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $user->created_at }}</span>
+                                                <span class="text-secondary text-xs font-weight-bold">{{ $user->created_at->diffForHumans() }}</span>
                                             </td>
                                             <td class="text-center">
                                                 <span
-                                                    class="text-secondary text-xs font-weight-bold">{{ $user->updated_at }}</span>
+                                                    class="text-secondary text-xs font-weight-bold">{{ $user->updated_at->diffForHumans() }}</span>
                                             </td>
 
                                             <td class="text-center">
