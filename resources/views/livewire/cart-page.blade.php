@@ -19,7 +19,7 @@
                 <tr wire:key='{{ $item['product_id'] }}'>
                   <td class="py-4">
                     <div class="flex items-center">
-                      <img class="h-16 w-16 mr-4 rounded-lg" src="{{ asset($item['product']->image) }}" alt="{{ $item['product']->name }}">
+                      <img class="h-16 w-16 mr-4 rounded-xl" src="{{ asset($item['product']->image) }}" alt="{{ $item['product']->name }}">
                       <span class="font-semibold text-wrap mr-3">{{ $item['product']->name }}</span>
                     </div>
                   </td>
@@ -28,9 +28,9 @@
                   </td>
                   <td class="py-4">
                     <div class="flex justify-start">
-                      <button wire:click='decreaseQty({{ $item['product_id'] }})' class="py-1 w-10 h-full text-gray-800 bg-gray-200 rounded-l-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">-</button>
+                      <button wire:click='decreaseQty({{ $item['product_id'] }})' class="py-1 w-8 h-full text-gray-800 bg-gray-200 rounded-l-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">-</button>
                       <span class="text-md bg-gray-200 py-1 w-8 text-center text-gray-600">{{ $item['quantity'] }}</span>
-                      <button wire:click='increaseQty({{ $item['product_id'] }})' class="py-1 w-10 h-full text-gray-600 bg-gray-200 rounded-r-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">+</button>
+                      <button wire:click='increaseQty({{ $item['product_id'] }})' class="py-1 w-8 h-full text-gray-600 bg-gray-200 rounded-r-full outline-none cursor-pointer dark:hover:bg-gray-700 dark:text-gray-400 hover:text-gray-700 dark:bg-gray-900 hover:bg-gray-300">+</button>
                     </div>
                     
                   </td>
