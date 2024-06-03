@@ -77,9 +77,10 @@
                   </div>
                   <div class="p-3">
                     <div class="flex items-center justify-between gap-2 mb-2">
-                      <h3 class="text-xl font-medium dark:text-gray-400">
+                      <a href="/products/{{ $product->slug}}"><h3 class="text-xl font-medium dark:text-gray-400 hover:text-blue-700">
                         {{ $product->name }}  
-                      </h3>
+                      </h3> </a>
+                      
                     </div>
                     <p class="text-lg ">
                       <span class="text-gray-800 dark:text-green-600">{{ Number::currency($product->price, 'IDR') }}  </span>
