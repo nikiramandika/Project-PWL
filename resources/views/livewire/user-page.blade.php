@@ -74,10 +74,10 @@
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-4 md:grid-cols-2">
 
                 @foreach ($brands as $brand)
-                    <div class="rounded-3xl shadow-md dark:bg-gray-800 overflow-hidden" wire:key="{{ $brand->id }}">
+                    <div class="rounded-3xl shadow-sm hover:shadow-md border border-gray-300 dark:bg-gray-800 overflow-hidden" wire:key="{{ $brand->id }}">
                         <a href="products?selected_brands[0]={{ $brand->id }}" class="">
                             <img src="{{ asset($brand->image) }}" alt=""
-                                class="object-cover w-full rounded-t-3xl hover:brightness-75 imgblur aspect-square">
+                                class="object-cover w-full rounded-t-3xl hover:brightness-90 imgblur aspect-square">
                         </a>
                         <div class="p-5 text-center bawahdrop rounded-b-3xl z-50">
                             <a href=""
@@ -316,7 +316,7 @@
                                 <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
-                        <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12 May  2024
+                        <p class="px-6 text-base font-medium text-gray-400 dark:text-gray-400"> Joined 12 May  2024
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
@@ -435,7 +435,7 @@
                                 <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
-                        <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12 Sep , 2022
+                        <p class="px-6 text-base font-medium text-gray-400 dark:text-gray-400"> Joined 12 Sep , 2022
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
@@ -552,7 +552,7 @@
                                 <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
-                        <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12, Sep , 2022
+                        <p class="px-6 text-base font-medium text-gray-400 dark:text-gray-400"> Joined 12, Sep , 2022
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
@@ -670,7 +670,7 @@
                                 <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
-                        <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 12 Sep 2022
+                        <p class="px-6 text-base font-medium text-gray-400 dark:text-gray-400"> Joined 12 Sep 2022
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
@@ -788,7 +788,7 @@
                                 <p class="text-xs text-gray-500 dark:text-gray-400">Web Developer</p>
                             </div>
                         </div>
-                        <p class="px-6 text-base font-medium text-gray-600 dark:text-gray-400"> Joined 18 Sep 2022
+                        <p class="px-6 text-base font-medium text-gray-400 dark:text-gray-400"> Joined 18 Sep 2022
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
