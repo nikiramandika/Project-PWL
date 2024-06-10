@@ -3,7 +3,7 @@
       <!-- Grid -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div class="col-span-full lg:col-span-1">
-          <a class="flex-none text-xl font-semibold text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#" aria-label="Brand">Sm4rtbuy</a>
+          <a class="flex-none text-xl font-semibold text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#" aria-label="Brand"><img src="{{ asset('assets/img/panjanglogo.png') }}" alt="" class=" h-5"></a>
         </div>
         <!-- End Col -->
   

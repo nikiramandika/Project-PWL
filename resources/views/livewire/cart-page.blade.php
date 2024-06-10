@@ -1,4 +1,4 @@
-<div class="w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white">
+<div class="w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white lg:min-h-96">
     <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
       <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
       <div class="flex flex-col lg:flex-row gap-4 w-full">

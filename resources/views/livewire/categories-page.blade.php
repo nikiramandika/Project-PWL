@@ -1,4 +1,4 @@
-<div class="w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white ">
+<div class="w-full  py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white ">
     <div class="max-w-[85rem] px-4 py-6 sm:px-6 lg:px-8 lg:py-10 mx-auto lg:min-h-96">
       <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
         @foreach ($categories as $category)

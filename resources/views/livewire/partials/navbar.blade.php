@@ -4,7 +4,7 @@
         <div class="relative md:flex md:items-center md:justify-between">
             <div class="flex items-center justify-between w-full lg:w-60 md:w-56">
                 <a class="flex-none text-xl font-semibold text-white dark:focus:outline-none dark:ring-gray-600"
-                    href="/" aria-label="Brand" id="judul">Sm4rtbuy</a>
+                    href="/" aria-label="Brand" id="judul"><img src="{{ asset('assets/img/panjanglogo.png') }}" alt="" class=" h-5"></a>
                 <div class="md:hidden">
                     <button type="button"
                         class=" bg-transparent hs-collapse-toggle flex justify-center items-center w-9 h-9 text-sm font-semibold rounded-lg border border-gray-200 text-grajy-800disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-gray-600"

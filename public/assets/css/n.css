@@ -8,6 +8,10 @@ body {
     font-family: "Montserrat";
 }
 
+.montserrat {
+    font-family: "Montserrat"!important;
+}
+
 .backgroundimg {
     background-repeat: no-repeat;
     background-size: cover;
