@@ -1,5 +1,5 @@
-<div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white">
-    <section class="flex items-center font-poppins dark:bg-gray-800 ">
+<div class="w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white">
+    <section class="flex items-center font-poppins dark:bg-gray-800 max-w-[85rem] m-auto">
         <div class="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto bg-white border rounded-3xl dark:border-gray-900 dark:bg-gray-900 md:py-10 md:px-10">
         <div>
             <h1 class="px-4 mb-8 text-2xl font-semibold tracking-wide text-gray-700 dark:text-gray-300 ">

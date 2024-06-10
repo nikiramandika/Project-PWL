@@ -2,16 +2,16 @@
 
 @section('content')
 
-<div class="page-header section-height-75">
+<div class="page-header section-height-75"  style="height: 100vh">
     <div class="container">
         <div class="row">
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
-                <div class="card card-plain mt-8">
+                <div class="card card-plain">
                     <div class="card-header pb-0 text-left bg-transparent">
                         <h4 class="mb-0">Forgot your password?</h4>
                     </div>
                     <div class="card-body">
-                        <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+                        <div class="mb-4 text-sm text-gray-600 dark:text-gray-400 montserrat">
                             {{ __('No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
                         </div>
 
@@ -23,17 +23,17 @@
 
                             <!-- Email Address -->
                             <div>
-                                <label for="email">Email</label>
+                                <label for="email" class="montserrat">Email</label>
                                 <div>
-                                    <input id="email" class="form-control block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus>
+                                    <input id="email" class="form-control block mt-1 w-full montserrat" type="email" name="email" :value="old('email')" required autofocus>
                                     @error('email')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
 
-                            <div class="flex items-center justify-end mt-4">
-                                <button type="submit" class="btn bg-gradient-info w-full mt-4 mb-0">{{ __('Email Password Reset Link') }}</button>
+                            <div class="flex items-center justify-end mt-2">
+                                <button type="submit" class="btn bg-gradient-info w-full mt-4 mb-0 montserrat">{{ __('Email Password Reset Link') }}</button>
                             </div>
                         </form>
                     </div>

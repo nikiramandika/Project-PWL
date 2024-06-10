@@ -34,7 +34,7 @@
                 <div
                     class="overflow-hidden overflow-y-auto max-h-[75vh] scrollbar-w-2 scrollbar-thumb-rounded-full scrollbar-track-bg-gray-100 scrollbar-thumb-bg-gray-300 dark:scrollbar-track-bg-slate-700 dark:scrollbar-thumb-bg-slate-500">
                     <div
-                        class="flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-gray-200 md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
+                        class="flex flex-col gap-x-0 mt-5 divide-y divide-none divide-gray-200 divide-opacity-15 md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
                         <a class="{{ request()->is('/') || request()->is('home') ? 'font-medium py-3 md:py-3 text-blue-400 focus:outline-none ring-gray-600  hover:text-gray-200' : 'font-medium py-3 md:py-3 text-gray-300 focus:outline-none ring-gray-600 hover:text-gray-200' }} navlist"
                             href="/" aria-current="page">Home</a>
 
@@ -43,7 +43,6 @@
 
                         <a class="{{ request()->is('products*') ? 'font-medium py-3 md:py-3 text-blue-400 focus:outline-none ring-gray-600  hover:text-gray-200' : 'font-medium py-3 md:py-3 text-gray-300 focus:outline-none ring-gray-600 hover:text-gray-200' }} navlist"
                             href="/products">Products</a>
-
                         <a class="{{ request()->is('cart*') ? 'font-medium flex items-center text-blue-400 py-3 md:py-3 dark:text-blue-500 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-200 dark:hover:text-gray-500' : 'font-medium flex items-center text-gray-300 py-3 md:py-3 dark:text-gray-400 dark:focus:outline-none dark:ring-gray-600 hover:text-gray-200 dark:hover:text-gray-500' }} navlist"
                             href="/cart">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -77,7 +76,7 @@
                             <div
                                 class="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:hover] md:py-3">
                                 <button type="button"
-                                    class="flex items-center w-full text-gray-300 hover:text-gray-200 font-medium dark:text-gray-400 dark:hover:text-gray-500 mt-2 md:mt-0 lg:mt-0">
+                                    class="flex items-center w-full text-gray-300 hover:text-gray-200 font-medium dark:text-gray-400 dark:hover:text-gray-500 mt-2 md:mt-0 lg:mt-0 mb-4 md:mb-0">
                                     {{ auth()->user()->name }}
                                     <svg class="ms-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                         height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"

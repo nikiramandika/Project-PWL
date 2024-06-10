@@ -13,7 +13,7 @@
                             {{ auth()->user()->name}}@endif
                     </h1> --}}
                     <h1
-                        class="block text-3xl font-bold text-gray-100 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white text-center">
+                        class="block text-3xl font-bold text-gray-100 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white text-center tracking-wide mb-10">
                         Smart Solutions for your everyday
                     </h1>
 
@@ -99,7 +99,7 @@
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2"><span class="text-blue-500"> Categories
+                    <h1 class="text-5xl font-bold dark:text-gray-200 pb-2"><span class=""> Categories
                         </span> </h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                         <div class="flex-1 h-2 bg-blue-200">

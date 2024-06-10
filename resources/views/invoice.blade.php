@@ -3,7 +3,7 @@
         font-family: 'Roboto', sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #ffffff;
+        background-color: #fcfcfc;
     }
 
     .container {
@@ -43,16 +43,21 @@
 
     .table-container {
         overflow-x: auto;
+        border-radius: 0.75rem;
+        
     }
 
     .table {
         width: 100%;
         border-collapse: collapse;
+        border-radius: 1rem;
+        
     }
 
     .table th,
     .table td {
         padding: 10px;
+        padding-left: 20px;
         text-align: left;
         border-bottom: 1px solid #ddd;
         word-break: break-all;
@@ -82,11 +87,15 @@
         margin-top: 20px;
         color: #666;
     }
-</style>
 
-<div class="container">
+    strong {
+        color:rgba(0, 0, 0);
+    }
+</style>
+@vite(['resources/css/app.css','resources/js/app.js'])
+<div class="container  mt-10 rounded-3xl shadow-md">
     <div class="header">
-        <h1>Sm4rtbuy Invoice</h1>
+        <h1 class="text-3xl">Sm4rtbuy Invoice</h1>
         <span>Date Invoice : <strong>{{ now()->format('d / m / Y') }}</strong></span><br>
     </div>
     <div class="invoice-info">

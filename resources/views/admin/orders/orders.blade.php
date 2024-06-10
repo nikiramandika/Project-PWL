@@ -39,14 +39,14 @@
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4 mx-4">
-                    <div class="card-header pb-0">
+                    <div class="card-header pb-0 ">
                         <div class="d-flex flex-row justify-content-between">
                             <div>
                                 <h5 class="mb-0">All Orders</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body px-0 pt-0 pb-2 card-body-table">
+                    <div class="card-body px-0 pt-0 pb-2 card-body-table" >
                         <div class="table-responsive p-0">
                             <div class="card-body">
                                 <table id="myTable" class="table align-items-center mb-0">
@@ -94,10 +94,10 @@
                                                         {{ Number::currency($order->grand_total, 'IDR') }}</p>
                                                 </td>
                                                 {{-- <td>
-                                        <div>
-                                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td> --}}
+                                                <div>
+                                                    <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
+                                                </div>
+                                                </td> --}}
                                                 <td class="text-center">
                                                     <p class="text-xs font-weight-bold mb-0">{{ $order->payment_status }}
                                                     </p>
@@ -114,7 +114,7 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="/orders-management/{{ $order->id }}/view" class="mx-3"
-                                                        data-bs-toggle="tooltip" data-bs-original-title="View user">
+                                                        data-bs-toggle="tooltip" data-bs-original-title="View order">
                                                         <i class="fas fa-eye text-secondary"></i>
                                                     </a>
                                                     <span>

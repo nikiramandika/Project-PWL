@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: "Nimbus";
+    src: url('../fonts/nimbus.otf');
+}
 
 .navlist {
     font-family: "Montserrat";
@@ -11,7 +15,9 @@ body {
 .montserrat {
     font-family: "Montserrat"!important;
 }
-
+.nimbus {
+    font-family: "Nimbus"!important;
+}
 .backgroundimg {
     background-repeat: no-repeat;
     background-size: cover;

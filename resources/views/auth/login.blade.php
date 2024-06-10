@@ -4,7 +4,7 @@
 @section('content')
     <main class="main-content  mt-0">
         <section>
-            <div class="page-header min-vh-75">
+            <div class="page-header min-vh-85" style="height: 100vh">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-6 col-md-6 d-flex flex-column mx-auto">

@@ -1,5 +1,5 @@
-<div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-    <h1 class="text-4xl font-bold text-slate-500">Order Details</h1>
+<div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-white">
+    <h1 class="text-4xl font-bold text-slate-800">Order Details</h1>
 
     <!-- Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-5">
@@ -89,23 +89,23 @@
                             $status = '';
 
                             if ($order->status == 'new') {
-                                $status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">New</span>';
+                                $status = '<span class="text-blue-500">New</span>';
                             }
                             if ($order->status == 'processing') {
                                 $status =
-                                    '<span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">Processing</span>';
+                                    '<span class="text-yellow-500">Processing</span>';
                             }
                             if ($order->status == 'shipped') {
                                 $status =
-                                    '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">Shipped</span>';
+                                    '<span class="text-green-500">Shipped</span>';
                             }
                             if ($order->status == 'delivered') {
                                 $status =
-                                    '<span class="bg-green-700 py-1 px-3 rounded text-white shadow">Delivered</span>';
+                                    '<span class="text-green-700">Delivered</span>';
                             }
                             if ($order->status == 'cancelled') {
                                 $status =
-                                    '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Cancelled</span>';
+                                    '<span class="text-red-500">Cancelled</span>';
                             }
                         @endphp
                         {!! $status !!}
@@ -143,15 +143,15 @@
 
                             if ($order->payment_status == 'pending') {
                                 $payment_status =
-                                    '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Pending</span>';
+                                    '<span class="text-yellow-500">Pending</span>';
                             }
                             if ($order->payment_status == 'paid') {
                                 $payment_status =
-                                    '<span class="bg-green-600 py-1 px-3 rounded text-white shadow">Paid</span>';
+                                    '<span class="text-green-600">Paid</span>';
                             }
                             if ($order->payment_status == 'failed') {
                                 $payment_status =
-                                    '<span class="bg-red-600 py-1 px-3 rounded text-white shadow">Failed</span>';
+                                    '<span class="text-red-600">Failed</span>';
                             }
                         @endphp
                         {!! $payment_status !!}
@@ -182,7 +182,7 @@
                             <tr wire:key="{{ $item->id }}">
                                 <td class="py-4">
                                     <div class="flex items-center">
-                                        <img class="h-16 w-16 mr-4" src="{{ asset($item['product']->image) }}"
+                                        <img class="h-16 w-16 mr-4 rounded-md" src="{{ asset($item['product']->image) }}"
                                             alt="Default Image">
                                     </div>
                                 </td>
@@ -243,10 +243,10 @@
                 <h2 class="text-lg font-semibold mb-4">Invoice</h2>
                 <div class="flex justify-between mb-2">
                     <a href="/my-orders/{{ $order->id }}/invoice"
-                        class="bg-blue-600 text-white py-2 mr-2 px-4 rounded-md hover:bg-blue-500">View
+                        class="bg-blue-600 text-white py-2 mr-2 px-4 rounded-xl hover:bg-blue-500">View
                         Invoice</a>
                     <a href="/my-orders/{{ $order->id }}/generate"
-                        class="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-500">Download
+                        class="bg-green-600 text-white py-2 px-4 rounded-xl hover:bg-green-500">Download
                         Invoice</a>
                 </div>
 
