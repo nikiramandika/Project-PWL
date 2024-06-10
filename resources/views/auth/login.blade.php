@@ -7,12 +7,12 @@
             <div class="page-header min-vh-75">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                        <div class="col-xl-5 col-lg-6 col-md-6 d-flex flex-column mx-auto">
                             <div class="card card-plain mt-6">
                                 <div class="card-header pb-0 text-left bg-transparent">
                                     <h3 class="font-weight-bolder text-gray-900">Welcome back</h3>
                                     <p class="mb-0">We're delighted to have you back!</p>
-                                    <p class="mb-0">Please log in or sign up to access your account.</p>
+                                    <p class="mb-0">Please log in or register to access your account.</p>
                                 </div>
                                 <div class="card-body montserrat">
                                     <style>
@@ -76,7 +76,7 @@
                                         <label>Email</label>
                                         <div class="mb-3">
                                             <input type="email" class="form-control" name="email" id="email"
-                                                placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                                placeholder="Email" aria-label="Email" aria-describedby="email-addon" style="border-radius: 0.75rem;">
                                             @error('email')
                                                 <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                             @enderror
@@ -85,7 +85,7 @@
                                         <div class="mb-3">
                                             <input type="password" class="form-control" name="password" id="password"
                                                 placeholder="Password" aria-label="Password"
-                                                aria-describedby="password-addon">
+                                                aria-describedby="password-addon" style="border-radius: 0.75rem;">
                                             @error('password')
                                                 <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                             @enderror
@@ -95,17 +95,17 @@
                                             <label class="form-check-label" for="rememberMe">Remember me</label>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign
+                                            <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0" style="border-radius: 1.5rem;">Sign
                                                 in</button>
                                         </div>
                                     </form>
                                     <div class="card-footer text-left pt-2 px-lg-0 px-0">
                                         <small class="text-muted">Forgot you password? Reset you password
-                                            <a href="/forgot-password" class="text-info text-gradient font-weight-bold">here</a>
+                                            <a href="/forgot-password" class="text-info font-weight-bold text-blue-500" style=" color: rgb(59 130 246 / var(--tw-text-opacity));" >here</a>
                                         </small>
                                         <p class="mb-4 text-sm mx-auto">
                                             Don't have an account?
-                                            <a href="register" class="text-info text-gradient font-weight-bold">Sign up</a>
+                                            <a href="register" class="text-info font-weight-bold" tyle=" color: rgb(59 130 246 / var(--tw-text-opacity));">Register</a>
                                         </p>
                                     </div>
                                 </div>

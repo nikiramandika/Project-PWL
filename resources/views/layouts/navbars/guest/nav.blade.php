@@ -1,6 +1,6 @@
 
 <nav
-    class="px-6 sm:px-6 lg:px-8  w-full navbar navbar-expand-lg position-absolute top-0 z-index-3 {{ Request::is('static-sign-up') ? ' shadow-none  navbar-transparent mt-4' : 'blur bgdrop shadow py-2 start-0 end-0 px-4 sm:px-6 lg:px-8' }}">
+    class="px-6 sm:px-6 lg:px-8  w-full navbar navbar-expand-lg position-absolute top-0 z-index-3 {{ Request::is('static-sign-up') ? ' shadow-none  navbar-transparent mt-4' : 'blur bgdrop shadow py-2 start-0 end-0 px-4 sm:px-6 lg:px-8' }}" style="backdrop-filter: saturate(200%) blur(20px) ;">
     <div class="container-fluid px-4 sm:px-6 lg:px-8 {{ Request::is('static-sign-up') ? 'container' : 'container-fluid' }}">
         <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 {{ Request::is('static-sign-up') ? 'text-white' : '' }}"
             href="/">
@@ -20,14 +20,14 @@
                     <li class="nav-item">
                         <a class="nav-link me-2" href="{{ url('register') }}">
                             <i
-                                class="fas fa-user-circle opacity-6 me-1 {{ Request::is('static-sign-up') ? '' : 'text-black' }}"></i>
+                                class="fas fa-user-circle opacity-6 me-1 {{ Request::is('static-sign-up') ? '' : 'text-gray-900' }}" style="color: rgb(17 24 39 / var(--tw-text-opacity));"></i>
                             Sign Up
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link me-2" href="{{ url('login') }}">
                             <i
-                                class="fas fa-key opacity-6 me-1 {{ Request::is('static-sign-up') ? '' : 'text-black' }}"></i>
+                                class="fas fa-key opacity-6 me-1 {{ Request::is('static-sign-up') ? '' : 'text-gray-900' }}" style="color: rgb(17 24 39 / var(--tw-text-opacity));"></i>
                             Log In
                         </a>
                     </li>

@@ -4,7 +4,7 @@
 @section('content')
 
   <section class="min-vh-100 mb-2">
-    <div class="page-header align-items-start min-vh-50 pt-1 pb-11 mx-3 border-radius-lg" style="background-image: url('../assets/img/curved-images/curved6.jpg');">
+    <div class="page-header align-items-start min-vh-50 pt-1 pb-11 mx-3" style="background-image: url('../assets/img/curved-images/curved6.jpg'); border-radius: 1.5rem;">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container">
         <div class="row justify-content-center">
@@ -16,10 +16,10 @@
     </div>
     <div class="container">
       <div class="row mt-lg-n10 mt-md-n11 mt-n10">
-        <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
-          <div class="card z-index-0">
+        <div class="col-xl-4 col-lg-5 col-md-7 mx-auto" style="border-radius: 1.5rem;">
+          <div class="card z-index-0" style="border-radius: 1.5rem;">
             <div class="card-header text-center pt-4">
-              <h5>Register with</h5>
+              <h5>Register</h5>
             </div>
             <div class="card-body montserrat" style=" padding-top:0px!important;">
               <form role="form text-left" method="POST" action="/register">
@@ -59,9 +59,9 @@
                   @enderror
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2 montserrat">Sign up</button>
+                  <button type="submit" class="btn bg-gradient-dark w-100 mt-2 mb-2 montserrat" style="border-radius: 2rem;">Register</button>
                 </div>
-                <p class="text-sm mt-3 mb-0 montserrat">Already have an account? <a href="login" class="text-dark font-weight-bolder">Sign in</a></p>
+                <p class="text-sm mt-3 mb-0 montserrat">Already have an account? <a href="login" class="text-dark font-weight-bolder">Log In</a></p>
               </form>
             </div>
           </div>
