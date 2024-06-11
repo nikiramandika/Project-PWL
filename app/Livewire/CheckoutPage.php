@@ -39,11 +39,11 @@ class CheckoutPage extends Component
         $this->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|numeric',
             'street_address' => 'required',
             'city' => 'required',
             'state' => 'required',
-            'zip_code' => 'required',
+            'zip_code' => 'required|numeric',
             'payment_method' => 'required',
         ]);
 
